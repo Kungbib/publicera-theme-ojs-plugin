@@ -12,7 +12,15 @@ This plugin is developed and tested with the following setup:
 * [npm](https://www.npmjs.com/get-npm) (should already be included with node)
 
 ## Usage
-The theme needs to be built before it is uploaded or deployed to OJS. The `build` folder will contain the finished theme-folder that should be moved into `<ojs_root>/plugins/themes/`. See [build](#build).
+
+1. [Build the theme](#Build).
+2. Copy the contents of the `build` folder (a folder named `publicera_theme`).
+3. Move the copy to your OJS themes folder `<ojs_root>/plugins/themes/`, OR just upload it inside the software as a theme plugin.
+
+
+## Development
+
+It's adviced to keep this repository out of your OJS development environment while developing the plugin. Instead, create a symlink in your `<ojs_root>/plugins/themes/` that points a symlinked folder named `publicera_theme` to `<this_repo>/build/publicera_theme/`.
 
 ## Build
 
@@ -23,7 +31,3 @@ $ npm install
 ````
 $ npm run build
 ````
-
-## Development
-
-It's adviced to keep this repository out of your OJS installation. Instead, create a symlink in your `<ojs_root>/plugins/themes/` that points a symlinked folder named `publicera_theme` to `<this_repo>/build/publicera_theme/`.
