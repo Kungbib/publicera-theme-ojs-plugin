@@ -17,7 +17,9 @@ class PubliceraThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 		$this->setParent('defaultthemeplugin');
-		$this->modifyStyle('stylesheet', array('addLess' => array('styles/remove-borders.less')));
+		
+		// Load primary stylesheet
+		$this->addStyle('stylesheet', 'styles/theme.css');
 	}
 
 	/**

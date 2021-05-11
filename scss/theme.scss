@@ -1,0 +1,11 @@
+// The order of these imports are important.
+
+@import 'variables';                                         // Own variables for this site
+@import '../node_modules/kungbib-styles/lib/scss/variables'; // Kungbib-styles variables
+@import '../node_modules/bootstrap/scss/bootstrap';          // Bootstrap import
+@import '../node_modules/kungbib-styles/lib/scss/styles';    // Kungbib-styles styles
+
+// Project specific styles following
+// Any bootstrap variables should be imported before importing bootstrap package
+@import 'styles';
+@import "fonts";

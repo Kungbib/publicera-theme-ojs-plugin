@@ -10,6 +10,7 @@ This plugin is developed and tested with the following setup:
 ## Requirements
 * [node.js](http://nodejs.org/)
 * [npm](https://www.npmjs.com/get-npm) (should already be included with node)
+* Sass
 
 ## Usage
 

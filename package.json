@@ -6,10 +6,16 @@
   "scripts": {
     "clear_build": "rm -rf ./build",
     "copy_source": "run-script-os",
+    "copy_fonts": "run-script-os",
+    "download_fonts": "curl https://www.kb.se/webdav/files/System/resources/fonts/sentinel-web/sentinel_web.zip --create-dirs --output tmp/fonts.zip",
+    "copy_fonts:win32": "cp -r .\\fonts\\ .\\build/publicera_theme\\fonts\\",
+    "copy_fonts:default": "cp -r ./fonts ./build/publicera_theme/fonts/",
     "copy_source:win32": "npm run clear_build && mkdir .\\build && cp -r .\\theme_skeleton\\ .\\build/publicera_theme\\",
-    "copy_source:default": "npm run clear_build && mkdir .\build && cp -r ./theme_skeleton ./build/publicera_theme/",
+    "copy_source:default": "npm run clear_build && mkdir ./build && cp -r ./theme_skeleton ./build/publicera_theme/",
+    "sass:build": "sass ./scss/theme.scss:./build/publicera_theme/styles/theme.css",
+    "sass:watch": "sass --watch --poll scss/theme.scss:build/publicera_theme/styles/theme.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy_source"
+    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts"
   },
   "repository": {
     "type": "git",
