@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Kungbib/publicera-theme-ojs-plugin#readme",
   "dependencies": {
+    "kungbib-styles": "^2.0.0",
     "run-script-os": "^1.1.6"
   }
 }
