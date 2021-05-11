@@ -1,0 +1,27 @@
+{
+  "name": "publicera-theme-ojs-plugin",
+  "version": "1.0.0",
+  "description": "OJS theme plugin for \"Publicera\".",
+  "main": "index.js",
+  "scripts": {
+    "clear_build": "rm -rf ./build",
+    "copy_source": "run-script-os",
+    "copy_source:win32": "npm run clear_build && mkdir .\\build && cp -r .\\theme_skeleton\\ .\\build/publicera_theme\\",
+    "copy_source:default": "npm run clear_build && mkdir .\build && cp -r ./theme_skeleton ./build/publicera_theme/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run copy_source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kungbib/publicera-theme-ojs-plugin.git"
+  },
+  "author": "Ola Blissing <ola.blissing@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Kungbib/publicera-theme-ojs-plugin/issues"
+  },
+  "homepage": "https://github.com/Kungbib/publicera-theme-ojs-plugin#readme",
+  "dependencies": {
+    "run-script-os": "^1.1.6"
+  }
+}
