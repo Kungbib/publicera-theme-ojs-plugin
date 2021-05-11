@@ -21,7 +21,7 @@ This plugin is developed and tested with the following setup:
 
 ## Development
 
-It's adviced to keep this repository out of your OJS development environment while developing the plugin. Instead, create a symlink in your `<ojs_root>/plugins/themes/` that points a symlinked folder named `publicera_theme` to `<this_repo>/build/publicera_theme/`.
+It's adviced to keep this repository out of your OJS development environment while developing the plugin. Instead, create a symlink in your `<ojs_root>/plugins/themes/` that points a symlinked folder named `publicera_theme` to `<this_repo>/build/publicera_theme/`
 
 ## Build
 
