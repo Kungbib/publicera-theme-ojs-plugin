@@ -4,7 +4,7 @@ OJS theme plugin for "Publicera".
 ## Support
 
 This plugin is developed and tested with the following setup:
-* `OJS 3.3.0-3`
+* `OJS 3.3.0-6`
 * `PHP 7.4`
 
 ## Requirements
