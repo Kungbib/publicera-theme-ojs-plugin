@@ -16,7 +16,7 @@ This plugin is developed and tested with the following setup:
 
 1. [Build the theme](#Build).
 2. Copy the contents of the `build` folder (a folder named `publicera_theme`).
-3. Move the copy to your OJS themes folder `<ojs_root>/plugins/themes/`, OR just upload it inside the software as a theme plugin.
+3. Move the copy to your OJS themes folder `<ojs_root>/plugins/themes/` OR just upload it inside the software as a theme plugin.
 
 
 ## Development
