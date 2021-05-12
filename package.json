@@ -7,6 +7,9 @@
     "clear_build": "rm -rf ./build",
     "copy_source": "run-script-os",
     "copy_fonts": "run-script-os",
+    "copy_bootstrap_js": "run-script-os",
+    "copy_bootstrap_js:default": "mkdir -p ./theme_skeleton/vendor && cp -r ./node_modules/bootstrap/dist/js/bootstrap.min.js ./theme_skeleton/vendor/bootstrap.min.js",
+    "copy_bootstrap_js:win32": "if not exist \"./theme_skeleton/vendor\" md \"./theme_skeleton/vendor\" && cp -r .\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js .\\theme_skeleton\\vendor\\bootstrap.min.js",
     "download_fonts": "curl https://www.kb.se/webdav/files/System/resources/fonts/sentinel-web/sentinel_web.zip --create-dirs --output tmp/fonts.zip",
     "copy_fonts:win32": "cp -r .\\fonts\\ .\\build/publicera_theme\\fonts\\",
     "copy_fonts:default": "cp -r ./fonts ./build/publicera_theme/fonts/",
@@ -15,7 +18,7 @@
     "sass:build": "sass ./scss/theme.scss:./build/publicera_theme/styles/theme.css",
     "sass:watch": "sass --watch --poll scss/theme.scss:build/publicera_theme/styles/theme.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts"
+    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts && npm run copy_bootstrap_js"
   },
   "repository": {
     "type": "git",
