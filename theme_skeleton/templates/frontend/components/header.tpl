@@ -29,12 +29,12 @@
 		{* Header *}
 		<nav class="pkp_site_nav_menu navbar navbar-expand-lg" aria-label="{translate|escape key="common.navigation.site"}">
 			<div class="container">
-				<a class="navbar-brand" href="."><img alt="Kungliga bibliotekets logotyp" src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> {$displayPageHeaderTitle|escape}</a>
+				<a class="navbar-brand" href="."><img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> {$displayPageHeaderTitle|escape}</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+					<i class="fa fa-bars" aria-hidden="true"></i>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						{if isset($supportedLocales) && $supportedLocales|@count}
 								{foreach from=$supportedLocales item=localeName key=localeKey}
 									{if $localeKey != $currentLocale}
