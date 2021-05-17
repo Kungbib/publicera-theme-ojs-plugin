@@ -63,7 +63,7 @@
 
 			<div class="pkp_head_wrapper container">
 				<div class="row justify-content-center py-4">
-					<div class="pkp_site_name_wrapper col-md-6 text-center my-4">
+					<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
 						<h1>
 							Välkommen<br/>till Publicera!
 						</h1>

@@ -21,8 +21,11 @@ class PubliceraThemePlugin extends ThemePlugin {
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/theme.css');
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
-		// Load Bootstrap
-		$this->addScript('bootstrap', 'vendor/bootstrap.min.js');
+		// Load Vendor JS
+		$this->addScript('bootstrap', 'js/bootstrap.min.js');
+		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
+		// Load own JS
+		$this->addScript('journal-list', 'js/journal-list.js');
 	}
 
 	/**

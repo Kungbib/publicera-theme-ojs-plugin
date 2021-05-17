@@ -7,9 +7,17 @@
     "clear_build": "rm -rf ./build",
     "copy_source": "run-script-os",
     "copy_fonts": "run-script-os",
+    "copy_js": "npm run copy_masonry && npm run copy_bootstrap_js && npm run copy_own_js",
+    "copy_own_js": "run-script-os",
+    "copy_own_js:win32": "Xcopy /E .\\js .\\build\\publicera_theme\\js\\",
+    "copy_own_js:default": "cp -r ./js/*.* ./build/publicera_theme/js/",
+    "ensure_js_dir": "if not exist \"./build/publicera_theme/js\" md \"./build/publicera_theme/js\"",
+    "copy_masonry": "run-script-os",
+    "copy_masonry:default": "mkdir -p ./build/publicera_theme/js && cp -r ./node_modules/masonry-layout/dist/masonry.pkgd.min.js ./build/publicera_theme/js/masonry.pkgd.min.js",
+    "copy_masonry:win32": "npm run ensure_js_dir && cp -r .\\node_modules\\masonry-layout\\dist\\masonry.pkgd.min.js .\\build\\publicera_theme\\js\\masonry.pkgd.min.js",
     "copy_bootstrap_js": "run-script-os",
-    "copy_bootstrap_js:default": "mkdir -p ./theme_skeleton/vendor && cp -r ./node_modules/bootstrap/dist/js/bootstrap.min.js ./theme_skeleton/vendor/bootstrap.min.js",
-    "copy_bootstrap_js:win32": "if not exist \"./theme_skeleton/vendor\" md \"./theme_skeleton/vendor\" && cp -r .\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js .\\theme_skeleton\\vendor\\bootstrap.min.js",
+    "copy_bootstrap_js:default": "mkdir -p ./theme_skeleton/js && cp -r ./node_modules/bootstrap/dist/js/bootstrap.min.js ./build/publicera_theme/js/bootstrap.min.js",
+    "copy_bootstrap_js:win32": "npm run ensure_js_dir && cp -r .\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js .\\build\\publicera_theme\\js\\bootstrap.min.js",
     "download_fonts": "curl https://www.kb.se/webdav/files/System/resources/fonts/sentinel-web/sentinel_web.zip --create-dirs --output tmp/fonts.zip",
     "copy_fonts:win32": "cp -r .\\fonts\\ .\\build/publicera_theme\\fonts\\",
     "copy_fonts:default": "cp -r ./fonts ./build/publicera_theme/fonts/",
@@ -18,7 +26,7 @@
     "sass:build": "sass ./scss/theme.scss:./build/publicera_theme/styles/theme.css",
     "sass:watch": "sass --watch --poll scss/theme.scss:build/publicera_theme/styles/theme.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts && npm run copy_bootstrap_js"
+    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts && npm run copy_js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +40,7 @@
   "homepage": "https://github.com/Kungbib/publicera-theme-ojs-plugin#readme",
   "dependencies": {
     "kungbib-styles": "^2.0.0",
+    "masonry-layout": "^4.2.2",
     "run-script-os": "^1.1.6"
   }
 }
