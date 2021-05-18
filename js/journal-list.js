@@ -1,21 +1,13 @@
-// vanilla JS
-// init with element
-// var grid = document.querySelector('.grid');
-// var msnry = new Masonry( grid, {
-//   // options...
-//   itemSelector: '.grid-item',
-//   columnWidth: 200
-// });
 
-// init with selector
 var msnry = new Masonry( '.journals-list', {
-  itemSelector: '.journal',
-  // columnWidth: '.journal-sizer',
+  itemSelector: '.journal-container',
+  columnWidth: '.journal-sizer',
   percentPosition: true,
   transitionDuration: 0,
 });
 
 function resizeResponse() {
+  // console.log("Updating masonry");
   msnry.layout();
 }
 
