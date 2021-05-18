@@ -16,3 +16,9 @@ msgstr "Publicera (KB)"
 
 msgid "plugins.themes.publicera_theme.description"
 msgstr "Theme for \"Publicera\" (publicera.kb.se)."
+
+msgid "plugins.themes.publicera_theme.jumbotron_header"
+msgstr "Welcome to Publicera!"
+
+msgid "plugins.themes.publicera_theme.jumbotron_lead"
+msgstr "A national digital platform for openly available swedish scientific journals."

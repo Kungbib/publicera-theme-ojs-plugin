@@ -58,13 +58,19 @@
 								<ul class="journal-links links">
 									<li class="view">
 										<a href="{$url|escape}">
-											<i class="journal-icon fa fa-fw fa-pencil"></i>
+											<span class="bi stack">
+												<i class="bi bi-circle"></i>
+												<i class="bi bi-book"></i>
+											</span>
 											{translate key="site.journalView"}
 										</a>
 									</li>
 									<li class="current">
 										<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
-											<i class="journal-icon fa fa-fw fa-pencil"></i>
+											<span class="bi stack">
+												<i class="bi bi-circle"></i>
+												<i class="bi bi-pen"></i>
+											</span>
 											{translate key="site.journalCurrent"}
 										</a>
 									</li>

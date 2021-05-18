@@ -1,0 +1,79 @@
+
+.journals-list {
+  list-style: none;
+  padding: 0;
+}
+
+.journal-container {
+  &:nth-child(odd) {
+    .journal-thumb-container {
+      background-color: #d6d6d6;
+    }
+  }
+  &:nth-child(even) {
+    .journal-thumb-container {
+      background-color: #b0b0b0;
+    }
+  }
+}
+
+.journal {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  &-container {
+    padding: 0.5em;
+  }
+  &-thumb-container {
+    &.is-placeholder {
+      display: flex;
+      color: $light;
+      text-transform: uppercase;
+      font-family: $font-family-base;
+      font-size: 2rem;
+      font-weight: 800;
+      align-items: center;
+      justify-content: center;
+      min-height: 5em;
+    }
+  }
+  &-thumb {
+    width: 100%;
+  }
+  &-body {
+    padding: 1em 1em 0 1em;
+  }
+  &-title {
+    a {
+      text-decoration: none;
+    }
+  }
+  &-description {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    img {
+      display: hidden;
+    }
+  }
+  &-links {
+    border: solid $light;
+    border-width: 1px 0px 0px 0px;
+    display: flex;
+    list-style: none;
+    padding: 0.5em 0 0.5em 0;
+    gap: 1em;
+    a {
+      font-size: 85%;
+      text-decoration: none;
+      color: $body-color;
+    }
+  }
+  &-icon {
+    border: 1px solid $publicera-purple-color;
+    border-radius: 50%;
+    height: 1.2em;
+    color: $publicera-purple-color;
+  }
+}

@@ -62,13 +62,14 @@
 		<header class="pkp_structure_head publicera-header text-white" id="headerNavigationContainer" role="banner">
 
 			<div class="pkp_head_wrapper container">
+
 				<div class="row justify-content-center py-4">
 					<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
 						<h1>
-							Välkommen<br/>till Publicera!
+							{translate key="plugins.themes.publicera_theme.jumbotron_header"}
 						</h1>
 						<p class="lead">
-							En nationell digital plattform för öppet tillgängliga svenska vetenskapliga tidsskrifter.
+							{translate key="plugins.themes.publicera_theme.jumbotron_lead"}
 						</p>
 						<div class="pkp_site_name">
 						{capture assign="homeUrl"}
@@ -83,15 +84,15 @@
 								</a>
 							</div>
 						{/if}
-						</div>
 					</div>
-
-					{capture assign="primaryMenu"}
-						{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
-					{/capture}
 				</div>
+				<div class="row justify-content-center">
+						{include file="frontend/components/headerSearch.tpl"}
+				</div>
+
 			</div><!-- .pkp_head_wrapper -->
 		</header><!-- .pkp_structure_head -->
+
 
 		{* Wrapper for page content and sidebars *}
 		{if $isFullWidth}
