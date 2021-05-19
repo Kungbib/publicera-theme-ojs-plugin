@@ -53,8 +53,11 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    p {
+      margin: 0;
+    }
     img {
-      display: hidden;
+      display: none;
     }
   }
   &-links {
