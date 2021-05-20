@@ -1,6 +1,6 @@
 <div class="headerSearch col col-md-10 col-lg-8 col-xl-6">
   <i class="kbico-search"></i>
-	{capture name="searchFormUrl"}{url escape=false}{/capture}
+	{capture name="searchFormUrl"}{url page="search" escape=false}{/capture}
 	{assign var=formUrlParameters value=[]}{* Prevent Smarty warning *}
 	{$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
 	<form class="cmp_form" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
