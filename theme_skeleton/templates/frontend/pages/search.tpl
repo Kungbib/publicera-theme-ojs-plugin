@@ -23,8 +23,7 @@
 {/if}
 
 <div class="page page_search">
-
-	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="common.search"}
+	<!--
 	<h1>
 		{translate key="common.search"}
 	</h1>
@@ -47,35 +46,39 @@
 				<input type="text" id="query" name="query" value="{$query|escape}" class="query" placeholder="{translate|escape key="common.search"}">
 			{/block}
 		</div>
-
-		<fieldset class="search_advanced">
-			<legend>
-				{translate key="search.advancedFilters"}
-			</legend>
-			<div class="date_range">
-				<div class="from">
-					{capture assign="dateFromLegend"}{translate key="search.dateFrom"}{/capture}
-					{html_select_date_a11y legend=$dateFromLegend prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd}
+		<a class="btn btn-primary" data-bs-toggle="collapse" href="#search-advanced" role="button" aria-expanded="false" aria-controls="search-advanced">
+    	Visa/dölj avancerade
+  	</a>
+		<div class="search-advanced collapse" id="search-advanced">
+			<fieldset class="search_advanced">
+				<legend>
+					{translate key="search.advancedFilters"}
+				</legend>
+				<div class="date_range">
+					<div class="from">
+						{capture assign="dateFromLegend"}{translate key="search.dateFrom"}{/capture}
+						{html_select_date_a11y legend=$dateFromLegend prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd}
+					</div>
+					<div class="to">
+						{capture assign="dateFromTo"}{translate key="search.dateTo"}{/capture}
+						{html_select_date_a11y legend=$dateFromTo prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd}
+					</div>
 				</div>
-				<div class="to">
-					{capture assign="dateFromTo"}{translate key="search.dateTo"}{/capture}
-					{html_select_date_a11y legend=$dateFromTo prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd}
+				<div class="author">
+					<label class="label" for="authors">
+						{translate key="search.author"}
+					</label>
+					{block name=searchAuthors}
+						<input type="text" id="authors" name="authors" value="{$authors|escape}">
+					{/block}
 				</div>
-			</div>
-			<div class="author">
-				<label class="label" for="authors">
-					{translate key="search.author"}
-				</label>
-				{block name=searchAuthors}
-					<input type="text" id="authors" name="authors" value="{$authors|escape}">
-				{/block}
-			</div>
-			{call_hook name="Templates::Search::SearchResults::AdditionalFilters"}
-		</fieldset>
+				{call_hook name="Templates::Search::SearchResults::AdditionalFilters"}
+			</fieldset>
+		</div> 
 
 		<div class="submit">
 			<button class="submit" type="submit">{translate key="common.search"}</button>
-		</div>
+		</div> -->
 	</form>
 
 	{call_hook name="Templates::Search::SearchResults::PreResults"}
@@ -95,9 +98,9 @@
 	{/if}
 
 	{* Search results, finally! *}
-	<ul class="search_results">
+	<ul class="search_results searchResults">
 		{iterate from=results item=result}
-			<li>
+			<li class="searchResults-articleContainer">
 				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true heading="h3"}
 			</li>
 		{/iterate}
