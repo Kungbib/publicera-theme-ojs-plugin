@@ -31,14 +31,14 @@
 				</label>
 				<input type="email" class="form-control" name="email" id="email" value="{$email|escape}" required aria-required="true">
 			</div>
-			<div class="buttons">
-				<button class="submit btn btn-primary" type="submit">
+			<div class="buttons d-grid gap-2">
+				<button class="submit btn btn-primary btn-round" type="submit">
 					{translate key="user.login.resetPassword"}
 				</button>
 
 				{if !$disableUserReg}
 					{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
-					<a href="{$registerUrl}" class="register">
+					<a href="{$registerUrl}" class="register btn btn-link">
 						{translate key="user.login.registerNewAccount"}
 					</a>
 				{/if}

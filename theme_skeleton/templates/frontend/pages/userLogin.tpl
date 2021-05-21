@@ -58,17 +58,16 @@
 					{translate key="user.login.rememberUsernameAndPassword"}
 				</label>
 			</div>
-			<div class="buttons">
-				<button class="submit btn btn-primary" type="submit">
-					{translate key="user.login"}
-				</button>
-
-				{if !$disableUserReg}
-					{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
-					<a href="{$registerUrl}" class="register">
-						{translate key="user.login.registerNewAccount"}
-					</a>
-				{/if}
+			<div class="buttons d-grid gap-2">
+					<button class="submit btn btn-primary btn-round" type="submit">
+						{translate key="user.login"}
+					</button>
+					{if !$disableUserReg}
+						{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
+						<a href="{$registerUrl}" class="register btn btn-link">
+							{translate key="user.login.registerNewAccount"}
+						</a>
+					{/if}
 			</div>
 	</form>
 </div><!-- .page -->
