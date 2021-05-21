@@ -9,3 +9,7 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 );
+
+$breadcrumb-divider: quote("•") !default;
+$breadcrumb-divider-color:          inherit !default;
+$breadcrumb-active-color:           inherit !default;

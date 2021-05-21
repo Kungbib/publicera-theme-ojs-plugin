@@ -22,3 +22,6 @@ msgstr "Välkommen till Publicera!"
 
 msgid "plugins.themes.publicera_theme.jumbotron_lead"
 msgstr "En nationell digital plattform för öppet tillgängliga svenska vetenskapliga tidsskrifter."
+
+msgid "common.login"
+msgstr "Logga in"

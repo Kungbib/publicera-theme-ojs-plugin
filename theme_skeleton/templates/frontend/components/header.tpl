@@ -65,12 +65,18 @@
 
 				<div class="row justify-content-center py-4">
 					<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
-						<h1>
-							{translate key="plugins.themes.publicera_theme.jumbotron_header"}
-						</h1>
-						<p class="lead">
-							{translate key="plugins.themes.publicera_theme.jumbotron_lead"}
-						</p>
+						{if $requestedPage == '' || $requestedPage == 'index' }
+							{* Welcome header *}
+							<h1>
+								{translate key="plugins.themes.publicera_theme.jumbotron_header"}
+							</h1>
+							<p class="lead">
+								{translate key="plugins.themes.publicera_theme.jumbotron_lead"}
+							</p>
+						{else}
+							{* Breadcrumbs header *}
+							{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="common.{$requestedPage}"}
+						{/if}
 						<div class="pkp_site_name">
 						{capture assign="homeUrl"}
 							{url page="index" router=$smarty.const.ROUTE_PAGE}
