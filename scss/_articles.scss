@@ -1,0 +1,35 @@
+ul.searchResults {
+  list-style: none;
+  padding: 0;
+  &-articleContainer {
+
+  }
+}
+
+.articleSummary {
+  background-color: #fff;
+  &-cover {
+    &.is-placeholder {
+      background-color: #d6d6d6;
+    }
+  }
+  &-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em;
+    justify-content: space-between;
+  }
+  &-source {
+    text-transform: uppercase;
+  }
+  &-title {
+    padding: 0;
+    margin: 0;
+    a {
+      text-decoration: none;
+    }
+  }
+  &-author {
+
+  }
+}
