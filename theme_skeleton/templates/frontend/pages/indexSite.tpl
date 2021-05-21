@@ -34,13 +34,13 @@
 					<li class="journal-container {if $thumb}has_thumb{/if} col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
 						<div class="journal">
 							{if $thumb}
-								<div class="journal-thumb-container thumb">
+								<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">
 									<a href="{$url|escape}">
 										<img class="journal-thumb" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
 									</a>
 								</div>
 							{else}
-								<div class="journal-thumb-container thumb is-placeholder">
+								<div class="journal-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 50%;">
 									placeholder
 								</div>
 							{/if}

@@ -25,6 +25,7 @@
     padding: 0.5em;
   }
   &-thumb-container {
+    overflow: hidden;
     &.is-placeholder {
       display: flex;
       color: $light;
