@@ -75,7 +75,7 @@
 							</p>
 						{else}
 							{* Breadcrumbs header *}
-							{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="common.{$requestedPage}"}
+							{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="{$pageTitle}"}
 						{/if}
 						<div class="pkp_site_name">
 						{capture assign="homeUrl"}
