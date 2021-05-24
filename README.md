@@ -1,16 +1,11 @@
 # publicera-theme-ojs-plugin
-OJS theme plugin for "Publicera".
+OJS theme plugin specifically made for for [Publicera](https://publicera.kb.se), an OJS portal hosted by the National Library of Sweden.
 
 ## Support
 
 This plugin is developed and tested with the following setup:
 * `OJS 3.3.0-6`
 * `PHP 7.4`
-
-## Requirements
-* [node.js](http://nodejs.org/)
-* [npm](https://www.npmjs.com/get-npm) (should already be included with node)
-* Sass
 
 ## Usage
 
@@ -20,12 +15,16 @@ This plugin is developed and tested with the following setup:
 4. Activate the plugin `Administration-> Site Settings-> Plugins`
 5. Choose the theme `Administration-> Site Settings-> Appearance`
 
-
 ## Development
 
 It's adviced to keep this repository out of your OJS development environment while developing the plugin. Instead, create a symlink in your `<ojs_root>/plugins/themes/` that points a symlinked folder named `publicera_theme` to `<this_repo>/build/publicera_theme/`
 
-## Build
+### Requirements 
+* [node.js](http://nodejs.org/)
+* [npm](https://www.npmjs.com/get-npm) (should already be included with node)
+* Sass
+
+### Build
 
 ````
 $ npm install
