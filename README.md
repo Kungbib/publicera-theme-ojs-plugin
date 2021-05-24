@@ -22,7 +22,7 @@ It's adviced to keep this repository out of your OJS development environment whi
 ### Requirements 
 * [node.js](http://nodejs.org/)
 * [npm](https://www.npmjs.com/get-npm) (should already be included with node)
-* Sass
+* [Sass](https://sass-lang.com/install) (`npm install -g sass`)
 
 ### Build
 
