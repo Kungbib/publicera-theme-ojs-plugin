@@ -21,6 +21,11 @@
   }
   &-source {
     text-transform: uppercase;
+    span:not(:first-child) {
+      &::before {
+        content: "•";
+      }
+    }
   }
   &-title {
     padding: 0;

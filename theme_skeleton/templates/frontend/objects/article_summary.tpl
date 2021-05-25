@@ -43,13 +43,22 @@
 		<div class="articleSummary-details col col-xs-9 col-sm-9 col-md-10 col-lg-11">
 			<div class="articleSummary-source">
 				<span>
-					{$journal->getLocalizedName()} •
+					{$journal->getLocalizedName()}
 				</span>
+				<span>
+					 {$issue->getData('showVolume')}, {$issue->getData('showNumber')} ({$issue->getData('showYear')})
+				</span>
+				<span>
+					 {$issue->getData('showTitle')}
+				</span>
+				</span>
+				<!--
 				{if $showDatePublished && $article->getDatePublished()}
 					<span class="published">
 						{$article->getDatePublished()|date_format:$dateFormatShort}
 					</span>
 				{/if}
+				-->
 			</div>
 
 			<{$heading} class="title articleSummary-title">

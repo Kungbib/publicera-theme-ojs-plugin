@@ -101,7 +101,7 @@
 	<ul class="search_results searchResults">
 		{iterate from=results item=result}
 			<li class="searchResults-articleContainer">
-				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true heading="h3"}
+				{include file="frontend/objects/article_summary.tpl" issue=$result.issue article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true heading="h3"}
 			</li>
 		{/iterate}
 	</ul>
