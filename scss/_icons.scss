@@ -1,20 +1,22 @@
 
 
-.bi.stack {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6em;
-  height: 0.8em;
-  margin-right: 0.25em;
-  color: $publicera-purple-color;
-  .bi {
-    &:nth-child(1) {
-      font-size: 200%;
+.bi {
+  &.bi-2x {
+    font-size: 200%;
+  }
+  &.bi-1-5x {
+    font-size: 150%;
+  }
+  &.stack {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6em;
+    height: 0.8em;
+    margin-right: 0.25em;
+    .bi {
+      position: absolute;
+      height: 1.6em;
     }
-    &:nth-child(2) {
-    }
-    position: absolute;
-    height: 1.6em;
   }
 }

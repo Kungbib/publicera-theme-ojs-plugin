@@ -11,13 +11,6 @@
 {include file="frontend/components/header.tpl"}
 
 <div class="page_index_site">
-
-	{if $about}
-		<div class="about_site">
-			{$about|nl2br}
-		</div>
-	{/if}
-
 	<div class="journals">
 		<h2>
 			{translate key="context.contexts"}
@@ -59,7 +52,7 @@
 									<li class="view">
 										<a href="{$url|escape}">
 											<span class="bi stack">
-												<i class="bi bi-circle"></i>
+												<i class="bi bi-circle bi-2x"></i>
 												<i class="bi bi-book"></i>
 											</span>
 											{translate key="site.journalView"}
@@ -68,7 +61,7 @@
 									<li class="current">
 										<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
 											<span class="bi stack">
-												<i class="bi bi-circle"></i>
+												<i class="bi bi-circle bi-2x"></i>
 												<i class="bi bi-pen"></i>
 											</span>
 											{translate key="site.journalCurrent"}

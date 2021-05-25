@@ -60,44 +60,72 @@
 			</div>
 		</nav>
 		<header class="pkp_structure_head publicera-header text-white" id="headerNavigationContainer" role="banner">
-
-			<div class="pkp_head_wrapper container">
-
-				<div class="row justify-content-center py-4">
-					<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
-						{if $requestedPage == '' || $requestedPage == 'index' }
-							{* Welcome header *}
-							<h1>
-								{translate key="plugins.themes.publicera_theme.jumbotron_header"}
-							</h1>
-							<p class="lead">
-								{translate key="plugins.themes.publicera_theme.jumbotron_lead"}
-							</p>
-						{else}
-							{* Breadcrumbs header *}
-							{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="{$pageTitle}"}
-						{/if}
-						<div class="pkp_site_name">
-						{capture assign="homeUrl"}
-							{url page="index" router=$smarty.const.ROUTE_PAGE}
-						{/capture}
-						{* Search form *}
-						{if $currentContext && $requestedPage !== 'search'}
-							<div class="pkp_navigation_search_wrapper">
-								<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
-									<span class="fa fa-search" aria-hidden="true"></span>
-									{translate key="common.search"}
+			<div>
+				<div class="pkp_head_wrapper container">
+					<div class="row justify-content-center py-4">
+						<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
+							{if $requestedPage == '' || $requestedPage == 'index' }
+								{* Welcome header *}
+								<h1>
+									{translate key="plugins.themes.publicera_theme.jumbotron_header"}
+								</h1>
+								<p class="lead">
+									{translate key="plugins.themes.publicera_theme.jumbotron_lead"}
+								</p>
+							{else}
+								{* Breadcrumbs header *}
+								{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="{$pageTitle}"}
+							{/if}
+							{capture assign="homeUrl"}
+								{url page="index" router=$smarty.const.ROUTE_PAGE}
+							{/capture}
+							{* Search form *}
+							{if $currentContext && $requestedPage !== 'search'}
+								<div class="pkp_navigation_search_wrapper">
+									<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
+										<span class="fa fa-search" aria-hidden="true"></span>
+										{translate key="common.search"}
+									</a>
+								</div>
+							{/if}
+						</div>
+						{if $about}
+						<div class="row justify-content-center">
+							<p class="text-center">
+								<a data-bs-target="#collapseAbout" class="text-white text-decoration-none" data-bs-toggle="collapse" role="button">
+									Läs mer om Publicera
+									<span class="bi stack">
+										<i class="bi bi-circle bi-1-5x"></i>
+										<i class="bi bi-chevron-up"></i>
+									</span>
 								</a>
-							</div>
+							</p>
+						</div>
 						{/if}
 					</div>
+				</div><!-- .pkp_head_wrapper -->
 				</div>
-				<div class="row justify-content-center">
-						{include file="frontend/components/headerSearch.tpl"}
+				<div class="darkened-overlay collapse" id="collapseAbout">
+				{if $requestedPage == '' || $requestedPage == 'index' }
+					{if $about}
+					<div class="container">
+							<div class="row justify-content-center py-4">
+								<div class="col col-sm-12 col-md-10 col-lg-8 col-xl-6 header-about">
+								{$about|nl2br}
+								</div>
+							</div>
+					</div>
+					{/if}
+				{/if}
 				</div>
-
-			</div><!-- .pkp_head_wrapper -->
+				<div>
+			<div>
 		</header><!-- .pkp_structure_head -->
+		<div class="container">
+			<div class="row justify-content-center">
+				{include file="frontend/components/headerSearch.tpl"}
+			</div>
+		</div>
 
 
 		{* Wrapper for page content and sidebars *}

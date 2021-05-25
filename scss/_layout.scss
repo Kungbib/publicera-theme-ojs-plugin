@@ -2,6 +2,9 @@
   background: rgb(44,94,146);
   background: linear-gradient(90deg, rgba(44,94,146,1) 0%, rgba(73,78,130,1) 50%, rgba(99,69,118,1) 100%);
 }
+.darkened-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
 // Make main content fill up so footer is pushed town
 .pkp_structure_page {
@@ -36,15 +39,23 @@
   }
 }
 
+.header-about {
+  p:first-child {
+    font-size: 150%;
+    line-height: 1.25em;
+    font-family: $headings-font-family;
+  }
+}
+
 .headerSearch {
   background: #fff;
   border: 2px solid transparent;
   border-radius: 5em;
   box-shadow: 0px 0px 15px 0px #00000052;
   position: relative;
-  top: 3.5em;
-  margin-top: -3.5em;
-  padding: 0 1.2em;
+  top: 1.25em;
+  margin-top: -3em;
+  padding: 0.5em 1.2em;
   display: flex;
   gap: 0.5em;
   justify-content: space-between;
