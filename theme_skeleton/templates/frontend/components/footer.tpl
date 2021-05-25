@@ -28,18 +28,22 @@
 <footer class="pkp_structure_footer_wrapper bg-dark text-light" role="contentinfo">
 	<a id="pkp_content_footer"></a>
 
-	<div class="pkp_structure_footer container">
-
-		{if $pageFooter}
-			<div class="pkp_footer_content">
-				{$pageFooter}
+	<div class="pkp_structure_footer container py-4">
+		<div class="row">
+			<div class="logo col col-12 col-md-3">
+				<img src="{$baseUrl}/images/kb_logo_white.svg" />
 			</div>
-		{/if}
+			{if $pageFooter}
+				<div class="pkp_footer_content col col-12 col-md-9">
+					{$pageFooter}
+				</div>
+			{/if}
 
-		<div class="pkp_brand_footer" role="complementary">
-			<a href="{url page="about" op="aboutThisPublishingSystem"}">
-				<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
-			</a>
+			<!-- <div class="pkp_brand_footer" role="complementary">
+				<a href="{url page="about" op="aboutThisPublishingSystem"}">
+					<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
+				</a>
+			</div> -->
 		</div>
 	</div>
 </footer><!-- pkp_structure_footer_wrapper -->
