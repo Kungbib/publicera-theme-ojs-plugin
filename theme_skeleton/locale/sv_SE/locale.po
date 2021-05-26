@@ -26,3 +26,8 @@ msgstr "En nationell digital plattform för öppet tillgängliga svenska vetensk
 msgid "plugins.themes.publicera_theme.jumbotron_about_link"
 msgstr "Läs mer om Publicera"
 
+msgid "plugins.themes.publicera_theme.search.searchResults.foundPlural"
+msgstr "Vi hittade <b>{$count} resultat</b> för"
+
+msgid "plugins.themes.publicera_theme.search.searchResults.foundSingle"
+msgstr "Vi hittade <b>1 resultat</b> för"

@@ -83,17 +83,18 @@
 
 	{call_hook name="Templates::Search::SearchResults::PreResults"}
 
-	<h2 class="pkp_screen_reader">{translate key="search.searchResults"}</h2>
-
+	<!-- <h2 class="pkp_screen_reader">{translate key="search.searchResults"}</h2> -->
 	{* Results pagination *}
 	{if !$results->wasEmpty()}
 		{assign var="count" value=$results->count}
-		<div class="pkp_screen_reader" role="status">
+		<div class="searchResults-status pkp_screen_reader text-center my-4" role="status">
 			{if $results->count > 1}
-				{translate key="search.searchResults.foundPlural" count=$results->count}
+				{translate key="plugins.themes.publicera_theme.search.searchResults.foundPlural" count=$results->count}
 			{else}
-				{translate key="search.searchResults.foundSingle"}
+				{translate key="plugins.themes.publicera_theme.search.searchResults.foundSingle"}
 			{/if}
+			<br>
+			"{$query|escape}"
 		</div>
 	{/if}
 

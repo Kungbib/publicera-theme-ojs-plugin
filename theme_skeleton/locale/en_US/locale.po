@@ -25,3 +25,9 @@ msgstr "A national digital platform for openly available swedish scientific jour
 
 msgid "plugins.themes.publicera_theme.jumbotron_about_link"
 msgstr "Read more about Publicera"
+
+msgid "plugins.themes.publicera_theme.search.searchResults.foundPlural"
+msgstr "We found <b>{$count} results</b> for"
+
+msgid "plugins.themes.publicera_theme.search.searchResults.foundSingle"
+msgstr "We found <b>1 result</b> for"
