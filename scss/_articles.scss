@@ -16,11 +16,15 @@
   &-details {
     display: flex;
     flex-direction: column;
-    padding: 1em 2em;
+    padding: 1.25rem 1.25rem;
     justify-content: space-between;
   }
   &-source {
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
     span:not(:first-child) {
       &::before {
         content: "•";
@@ -29,12 +33,13 @@
   }
   &-title {
     padding: 0;
-    margin: 0;
+    font-size: 1.25rem;
+    margin: 0.5em 0;
     a {
       text-decoration: none;
     }
   }
   &-author {
-
+    font-size: 0.88rem;
   }
 }
