@@ -8,7 +8,10 @@ var msnry = new Masonry( '.journals-list', {
 
 function resizeResponse() {
   // console.log("Updating masonry");
-  msnry.layout();
+  var container = document.getElementsByClassName('.journal-container');
+  if (container.length > 0) {
+    msnry.layout();
+  }
 }
 
 window.onresize = resizeResponse;
