@@ -46,10 +46,12 @@
 					{$journal->getLocalizedName()}
 				</span>
 				<span>
-					 {$issue->getData('showVolume')}, {$issue->getData('showNumber')} ({$issue->getData('showYear')})
+					<!-- {translate key="metadata.property.displayName.volume"} -->
+					vol. 
+					{$issue->getData('volume')}, {$issue->getData('number')} ({$issue->getData('year')})
 				</span>
 				<span>
-					 {$issue->getData('showTitle')}
+					{$issue->getData('title')|join}
 				</span>
 				</span>
 				<!--
