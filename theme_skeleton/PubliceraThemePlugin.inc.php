@@ -26,6 +26,8 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
 		// Load own JS
 		$this->addScript('journal-list', 'js/journal-list.js');
+		// Image assets
+		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 	}
 
 	/**
@@ -34,6 +36,13 @@ class PubliceraThemePlugin extends ThemePlugin {
 	 */
 	function getDisplayName() {
 		return __('plugins.themes.publicera_theme.name');
+	}
+
+	function sitewideData($hookName, $args) {
+		$smarty = $args[0];
+
+		$imagesAssetPath = $this->getRequest()->getBaseUrl() . DIRECTORY_SEPARATOR . $this->getTemplatePath() . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
+		$smarty->assign('imageAssetPath', $imagesAssetPath);
 	}
 
 	/**

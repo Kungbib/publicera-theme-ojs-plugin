@@ -29,10 +29,11 @@
 	<a id="pkp_content_footer"></a>
 
 	<div class="pkp_structure_footer container py-4">
-		<div class="row">
-			<div class="logo col col-12 col-md-3">
-				<img src="{$baseUrl}/images/kb_logo_white.svg" />
+		<div class="row d-flex justify-content-center">
+			<div class="logo col col-4 col-md-2 text-center">
+				<img src="{$imageAssetPath}/kb_logo_text_white.svg" />
 			</div>
+			<div class="logo col col-12 col-md-1"></div>
 			{if $pageFooter}
 				<div class="pkp_footer_content col col-12 col-md-9">
 					{$pageFooter}
