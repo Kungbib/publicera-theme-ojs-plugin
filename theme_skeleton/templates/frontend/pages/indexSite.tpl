@@ -12,19 +12,19 @@
 
 <div class="page_index_site">
 	<div class="journals">
-		<h2>
+		<!-- <h2>
 			{translate key="context.contexts"}
-		</h2>
+		</h2> -->
 		{if !$journals|@count}
 			{translate key="site.noJournals"}
 		{else}
 			<ul class="journals-list">
-				<li class="journal-sizer col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3"></li>
+				<li class="journal-sizer col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4"></li>
 				{foreach from=$journals item=journal}
 					{capture assign="url"}{url journal=$journal->getPath()}{/capture}
 					{assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
 					{assign var="description" value=$journal->getLocalizedDescription()}
-					<li class="journal-container {if $thumb}has_thumb{/if} col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
+					<li class="journal-container {if $thumb}has_thumb{/if} col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
 						<div class="journal">
 							{if $thumb}
 								<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">

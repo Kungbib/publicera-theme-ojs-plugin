@@ -2,6 +2,7 @@
 .journals-list {
   list-style: none;
   padding: 0;
+  margin: 0 -15px;
 }
 
 .journal-container {
@@ -22,7 +23,7 @@
   background-color: #fff;
   flex-direction: column;
   &-container {
-    padding: 0.5em;
+    padding: 15px 15px 15px 15px;
   }
   &-thumb-container {
     overflow: hidden;
