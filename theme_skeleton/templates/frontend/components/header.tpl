@@ -125,12 +125,13 @@
 				<div>
 			<div>
 		</header><!-- .pkp_structure_head -->
+		{if $requestedPage == '' || $requestedPage == 'index' || $requestedPage == 'search' }
 		<div class="container">
 			<div class="row justify-content-center">
 				{include file="frontend/components/headerSearch.tpl"}
 			</div>
 		</div>
-
+		{/if}
 
 		{* Wrapper for page content and sidebars *}
 		{if $isFullWidth}
