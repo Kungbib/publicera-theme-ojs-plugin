@@ -74,7 +74,11 @@
 								</p>
 							{else}
 								{* Breadcrumbs header *}
-								{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="{$pageTitle}"}
+								{if isset($translatedPageTitle)}
+									{include file="frontend/components/breadcrumbs.tpl" currentTitle="{$translatedPageTitle}"}
+								{else}
+									{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="{$pageTitle}"}
+								{/if}
 							{/if}
 							{capture assign="homeUrl"}
 								{url page="index" router=$smarty.const.ROUTE_PAGE}
