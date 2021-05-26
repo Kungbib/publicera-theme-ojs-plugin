@@ -92,8 +92,10 @@
 footer {
   color: $light;
   a {
-    text-decoration: none;
     color: $light;
+    &:hover {
+      color: $light;
+    }
   }
   .pkp_footer_content {
     display: grid;
