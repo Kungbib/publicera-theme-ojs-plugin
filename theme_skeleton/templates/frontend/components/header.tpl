@@ -63,7 +63,7 @@
 			<div>
 				<div class="pkp_head_wrapper container">
 					<div class="row justify-content-center py-4">
-						<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-4">
+						<div class="pkp_site_name_wrapper col-md-8 col-lg-6 text-center my-2">
 							{if $requestedPage == '' || $requestedPage == 'index' }
 								{* Welcome header *}
 								<h1>
@@ -93,7 +93,7 @@
 						<div class="row justify-content-center">
 							<p class="text-center">
 								<a data-bs-target="#collapseAbout" class="text-white text-decoration-none" data-bs-toggle="collapse" role="button">
-									Läs mer om Publicera
+									{translate key="plugins.themes.publicera_theme.jumbotron_about_link"}
 									<span class="bi stack">
 										<i class="bi bi-circle bi-1-5x"></i>
 										<i class="bi bi-chevron-up"></i>
