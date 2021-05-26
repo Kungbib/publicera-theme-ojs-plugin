@@ -31,3 +31,6 @@ msgstr "Vi hittade <b>{$count} resultat</b> för"
 
 msgid "plugins.themes.publicera_theme.search.searchResults.foundSingle"
 msgstr "Vi hittade <b>1 resultat</b> för"
+
+msgid "plugins.themes.publicera_theme.search.placeholder"
+msgstr "Sök tidskrifter, artiklar m.m."

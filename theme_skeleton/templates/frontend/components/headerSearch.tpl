@@ -12,7 +12,7 @@
 		   label/input relationship *}
 		<div class="search_input">
 			{block name=searchQuery}
-				<input type="text" id="query" name="query" value="{$query|escape}" aria-label="{translate key='search.searchFor'}" class="query" placeholder="{translate|escape key="common.search"}">
+				<input type="text" id="query" name="query" value="{$query|escape}" aria-label="{translate key='search.searchFor'}" class="query" placeholder="{translate|escape key="plugins.themes.publicera_theme.search.placeholder"}">
 			{/block}
 		</div>
 	</form>

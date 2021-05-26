@@ -31,3 +31,6 @@ msgstr "We found <b>{$count} results</b> for"
 
 msgid "plugins.themes.publicera_theme.search.searchResults.foundSingle"
 msgstr "We found <b>1 result</b> for"
+
+msgid "plugins.themes.publicera_theme.search.placeholder"
+msgstr "Search journals, articles etc"
