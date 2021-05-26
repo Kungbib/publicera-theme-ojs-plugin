@@ -13,9 +13,9 @@
 <div class="page page_lost_password d-flex justify-content-center">
 
 	<form class="cmp_form lost_password  bg-light justify-content-center p-4 align-self-center col col-md-12 col-lg-8 col-xl-6" id="lostPasswordForm" action="{url page="login" op="requestResetPassword"}" method="post">
-		<h1>
+		<!-- <h1>
 			{translate key="user.login.resetPassword"}
-		</h1>
+		</h1> -->
 		<p>{translate key="user.login.resetPasswordInstructions"}</p>
 		{csrf}
 		{if $error}

@@ -13,9 +13,9 @@
 <div class="page page_login d-flex justify-content-center">
 
 	<form class="cmp_form cmp_form login bg-light justify-content-center p-4 align-self-center col col-md-12 col-lg-8 col-xl-6" id="login" method="post" action="{$loginUrl}">
-		<h1 class="m-0">
+		<!-- <h1 class="m-0">
 			{translate key="user.login"}
-		</h1>
+		</h1> -->
 		{csrf}
 
 		{if $error}
