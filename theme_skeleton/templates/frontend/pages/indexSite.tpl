@@ -57,7 +57,7 @@
 									</li>
 									<li class="current">
 										<i class="journal-icon kbico-pen_circle"></i>
-										<a href="{$url|escape}">
+										<a href="{$url|escape}/submission/wizard">
 											{translate key="plugins.themes.publicera_theme.site.sendManuscript"}
 										</a>
 									</li>
