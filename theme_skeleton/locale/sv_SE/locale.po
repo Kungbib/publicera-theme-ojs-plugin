@@ -34,3 +34,12 @@ msgstr "Vi hittade <b>1 resultat</b> för"
 
 msgid "plugins.themes.publicera_theme.search.placeholder"
 msgstr "Sök tidskrifter, artiklar m.m."
+
+msgid "plugins.themes.publicera_theme.site.journalView"
+msgstr "Visa tidskrift"
+
+msgid "plugins.themes.publicera_theme.site.journalCurrent"
+msgstr "Senaste nummer"
+
+msgid "plugins.themes.publicera_theme.site.sendManuscript"
+msgstr "Skicka in manus"

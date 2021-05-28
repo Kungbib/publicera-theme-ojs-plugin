@@ -50,21 +50,15 @@
 								{/if}
 								<ul class="journal-links links">
 									<li class="view">
-										<a href="{$url|escape}">
-											<span class="bi stack">
-												<i class="bi bi-circle bi-2x"></i>
-												<i class="bi bi-book"></i>
-											</span>
-											{translate key="site.journalView"}
+										<i class="journal-icon kbico-book-circle"></i>
+										<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
+											{translate key="plugins.themes.publicera_theme.site.journalCurrent"}
 										</a>
 									</li>
 									<li class="current">
-										<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
-											<span class="bi stack">
-												<i class="bi bi-circle bi-2x"></i>
-												<i class="bi bi-pen"></i>
-											</span>
-											{translate key="site.journalCurrent"}
+										<i class="journal-icon kbico-pen_circle"></i>
+										<a href="{$url|escape}">
+											{translate key="plugins.themes.publicera_theme.site.sendManuscript"}
 										</a>
 									</li>
 								</ul>

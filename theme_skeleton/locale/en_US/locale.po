@@ -34,3 +34,12 @@ msgstr "We found <b>1 result</b> for"
 
 msgid "plugins.themes.publicera_theme.search.placeholder"
 msgstr "Search journals, articles etc"
+
+msgid "plugins.themes.publicera_theme.site.journalView"
+msgstr "Show journal"
+
+msgid "plugins.themes.publicera_theme.site.journalCurrent"
+msgstr "Latest issue"
+
+msgid "plugins.themes.publicera_theme.site.sendManuscript"
+msgstr "Send in manuscript"
