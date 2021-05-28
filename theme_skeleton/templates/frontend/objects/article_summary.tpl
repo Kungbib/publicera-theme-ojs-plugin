@@ -25,9 +25,9 @@
 {/if}
 
 {assign var=publication value=$article->getCurrentPublication()}
-<div class="obj_article_summary articleSummary row">
+<div class="obj_article_summary articleSummary">
 	{if $publication->getLocalizedData('coverImage')}
-		<div class="cover articleSummary-cover col col-xs-3 col-sm-3 col-md-2 col-lg-1">
+		<div class="cover articleSummary-cover">
 			<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="file">
 				{assign var="coverImage" value=$article->getCurrentPublication()->getLocalizedData('coverImage')}
 				<img
@@ -37,10 +37,10 @@
 			</a>
 		</div>
 	{else}
-		<div class="cover articleSummary-cover col col-xs-3 col-sm-3 col-md-2 col-lg-1 is-placeholder">
+		<div class="cover articleSummary-cover">
 		</div>
 	{/if}
-		<div class="articleSummary-details col col-xs-9 col-sm-9 col-md-10 col-lg-11">
+		<div class="articleSummary-details">
 			<div class="articleSummary-source">
 				<span>
 					{$journal->getLocalizedName()}
