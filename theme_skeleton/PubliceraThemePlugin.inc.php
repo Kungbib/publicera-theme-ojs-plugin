@@ -26,6 +26,7 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
 		// Load own JS
 		$this->addScript('journal-list', 'js/journal-list.js');
+		$this->addScript('about-collapse', 'js/about-collapse.js');
 		// Image assets
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 	}

@@ -98,10 +98,7 @@
 							<p class="text-center">
 								<a data-bs-target="#collapseAbout" class="text-white" data-bs-toggle="collapse" role="button">
 									{translate key="plugins.themes.publicera_theme.jumbotron_about_link"}
-									<span class="bi stack">
-										<i class="bi bi-circle bi-1-5x"></i>
-										<i class="bi bi-chevron-up"></i>
-									</span>
+									<i class="kbico-circle-arrow-down rotate" id="collapseAboutIcon"></i>
 								</a>
 							</p>
 						</div>

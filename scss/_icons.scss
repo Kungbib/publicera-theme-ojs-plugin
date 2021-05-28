@@ -20,3 +20,11 @@
     }
   }
 }
+
+.rotate {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
