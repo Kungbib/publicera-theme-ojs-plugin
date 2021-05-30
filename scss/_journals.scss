@@ -22,6 +22,11 @@
   display: flex;
   background-color: #fff;
   flex-direction: column;
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+  }
   &-container {
     padding: 15px 15px 15px 15px;
   }
@@ -44,7 +49,7 @@
     height: 100%;
   }
   &-body {
-    padding: 1em 1em 0 1em;
+    padding: 1.25em 1.25em 0 1.25em;
   }
   &-title {
     a {
@@ -56,6 +61,8 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.4em;
+    margin-bottom: 1em;
     p {
       margin: 0;
     }
@@ -65,10 +72,10 @@
   }
   &-links {
     border: solid $light;
-    border-width: 1px 0px 0px 0px;
+    border-width: 2px 0px 0px 0px;
     display: flex;
     list-style: none;
-    padding: 0.5em 0 0.5em 0;
+    padding: 0.5em 0 0.85em 0;
     gap: 1em;
     a {
       font-size: 85%;
@@ -78,7 +85,7 @@
   }
   &-icon {
     color: $publicera-purple-color;
-    font-size: 150%;
+    font-size: 135%;
     position: relative;
     top: 0.25em;
     text-decoration: none;
