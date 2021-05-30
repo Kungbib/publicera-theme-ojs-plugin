@@ -29,7 +29,11 @@
 		{* Header *}
 		<nav class="pkp_site_nav_menu navbar navbar-expand-lg" aria-label="{translate|escape key="common.navigation.site"}">
 			<div class="container">
-				<a class="navbar-brand" href="."><img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> {$displayPageHeaderTitle|escape}</a>
+				<a class="navbar-brand" href=".">
+					<img src="{$imageAssetPath}/kb_logo_black.svg" />
+					<!-- DISABLING BUILT IN LOGO-CHOOSER <img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> -->
+					{$displayPageHeaderTitle|escape}
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars" aria-hidden="true"></i>
 				</button>
