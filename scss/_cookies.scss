@@ -1,0 +1,42 @@
+div#cookie-notice {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  margin: 0;
+  padding: 2em 0;
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  .container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    @include media-breakpoint-up(lg) {
+      justify-content: space-around;
+      text-align: left;
+      align-items: baseline;
+      flex-direction: row;
+    }
+  }
+  button {
+    @include media-breakpoint-up(md) {
+      align-self: center;
+    }
+    @include media-breakpoint-up(xl) {
+      align-self: unset;
+    }
+  }
+  a { 
+    text-decoration: underline;
+    color: #fff;
+    display: block;
+    margin-top: 1em;
+    @include media-breakpoint-up(xl) {
+      display: inline;
+      margin-top: unset;
+    }
+  }
+
+}
