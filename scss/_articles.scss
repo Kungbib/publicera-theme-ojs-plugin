@@ -23,13 +23,15 @@
     background-color: #ededed;
     &.is-placeholder {
       img {
-        height: 100%;
+        height: 120px;
+        width: 80px;
       }
     }
   }
   &-details {
     display: flex;
     flex-grow: 1;
+    min-width: 0; // Important for ellipsis to work inside flex child
     flex-direction: column;
     padding: 1.25rem 1.25rem;
     justify-content: space-between;
