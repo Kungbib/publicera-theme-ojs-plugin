@@ -43,3 +43,9 @@ msgstr "Latest issue"
 
 msgid "plugins.themes.publicera_theme.site.sendManuscript"
 msgstr "Send in manuscript"
+
+msgid "plugins.themes.publicera_theme.site.publishedIn"
+msgstr "published in"
+
+msgid "plugins.themes.publicera_theme.site.by"
+msgstr "by"

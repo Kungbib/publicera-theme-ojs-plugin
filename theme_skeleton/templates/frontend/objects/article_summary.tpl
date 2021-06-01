@@ -25,29 +25,30 @@
 {/if}
 
 {assign var=publication value=$article->getCurrentPublication()}
+<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="file articleSummary-link">
+<p class="pkp_screen_reader screen-reader-only">{$article->getLocalizedTitle()|strip_unsafe_html}{if $article->getLocalizedSubtitle()}: {$article->getLocalizedSubtitle()|escape}{/if}. {translate key="plugins.themes.publicera_theme.site.publishedIn"} {$journal->getLocalizedName()}, {translate key="issue.vol"} {$issue->getData('volume')}, {translate key="issue.no"} {$issue->getData('number')}, ({$issue->getData('year')}), {translate key="plugins.themes.publicera_theme.site.by"} {$article->getAuthorString()|escape}</p>
 <div class="obj_article_summary articleSummary">
 	{if $publication->getLocalizedData('coverImage')}
 		<div class="cover articleSummary-cover">
-			<a {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if} class="file">
 				{assign var="coverImage" value=$article->getCurrentPublication()->getLocalizedData('coverImage')}
 				<img
 					src="{$article->getCurrentPublication()->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
 					alt="{$coverImage.altText|escape|default:''}"
-				>
-			</a>
+				/>
 		</div>
 	{else}
-		<div class="cover articleSummary-cover">
+		<div class="cover articleSummary-cover is-placeholder" aria-hidden="true">
+				<img src="{$imageAssetPath}/journal_default_cover.png" />
 		</div>
 	{/if}
-		<div class="articleSummary-details">
+		<div class="articleSummary-details" aria-hidden="true">
 			<div class="articleSummary-source">
 				<span>
 					{$journal->getLocalizedName()}
 				</span>
 				<span>
 					{translate key="issue.vol"} {$issue->getData('volume')},
-					{translate key="issue.no"} {$issue->getData('number')}
+					{translate key="issue.no"} {$issue->getData('number')},
 					({$issue->getData('year')})
 				</span>
 				<span>
@@ -64,14 +65,12 @@
 			</div>
 
 			<{$heading} class="title articleSummary-title">
-				<a id="article-{$article->getId()}" {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$articlePath}"{else}href="{url page="article" op="view" path=$articlePath}"{/if}>
 					{$article->getLocalizedTitle()|strip_unsafe_html}
 					{if $article->getLocalizedSubtitle()}
 						<span class="subtitle">
 							• {$article->getLocalizedSubtitle()|escape}
 						</span>
 					{/if}
-				</a>
 			</{$heading}>
 
 			<div class="articleSummary-author">
@@ -116,3 +115,4 @@
 
 	{call_hook name="Templates::Issue::Issue::Article"}
 </div>
+</a>

@@ -43,3 +43,9 @@ msgstr "Senaste nummer"
 
 msgid "plugins.themes.publicera_theme.site.sendManuscript"
 msgstr "Skicka in manus"
+
+msgid "plugins.themes.publicera_theme.site.publishedIn"
+msgstr "publicerad i"
+
+msgid "plugins.themes.publicera_theme.site.by"
+msgstr "av"
