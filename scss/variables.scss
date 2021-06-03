@@ -1,4 +1,8 @@
 $publicera-purple-color: #583c9b;
+$article-thumb-width: 80px;
+$article-thumb-height: 120px;
+
+// BOOTSTRAP OVERRIDES BELOW THIS POINT
 
 $breadcrumb-divider: quote("•") !default;
 $breadcrumb-divider-color:          inherit !default;
@@ -34,3 +38,5 @@ $container-max-widths: (
 //   xxl: 1320px
 );
 // scss-docs-end container-max-widths
+
+
