@@ -59,8 +59,15 @@
     overflow: hidden;
     line-height: 1.4em;
     margin-bottom: 1em;
+    br {
+      display: none;
+    }
     p {
       margin: 0;
+      display: none;
+      &:first-child {
+        display: block;
+      }
     }
     img {
       display: none;

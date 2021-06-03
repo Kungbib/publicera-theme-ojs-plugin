@@ -7,4 +7,11 @@
   clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
+}
+
+.fadeable {
+  transition: opacity 0.1s ease;
+  &.faded {
+    opacity: 0;
   }
+}

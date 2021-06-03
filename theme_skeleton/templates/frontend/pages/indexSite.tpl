@@ -18,7 +18,7 @@
 		{if !$journals|@count}
 			{translate key="site.noJournals"}
 		{else}
-			<ul class="journals-list">
+			<ul class="journals-list fadeable faded" id="journals-list">
 				<li class="journal-sizer col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4"></li>
 				{foreach from=$journals item=journal}
 					{capture assign="url"}{url journal=$journal->getPath()}{/capture}
