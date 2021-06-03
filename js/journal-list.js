@@ -30,11 +30,3 @@ if (journalList != null) {
   });
   window.onresize = resizeResponse;
 }
-
-// setTimeout(() => {
-//   var journalList = document.getElementById('journals-list');
-//   if (journalList != null) {
-//     msnry.layout();
-//     journalList.classList.remove("faded");
-//   }
-// }, 1);
