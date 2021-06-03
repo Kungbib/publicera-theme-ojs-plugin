@@ -26,17 +26,16 @@
 					{assign var="description" value=$journal->getLocalizedDescription()}
 					<li class="journal-container {if $thumb}has_thumb{/if} col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
 						<div class="journal">
+							<a href="{$url|escape}" tabindex="-1">
 							{if $thumb}
 								<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">
-									<a href="{$url|escape}">
 										<img class="journal-thumb" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
-									</a>
 								</div>
 							{else}
 								<div class="journal-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 50%;">
-									placeholder
 								</div>
 							{/if}
+							</a>
 							<div class="journal-body body">
 								<h3 class="journal-title">
 									<a href="{$url|escape}" rel="bookmark">
