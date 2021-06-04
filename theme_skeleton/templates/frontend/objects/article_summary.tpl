@@ -51,9 +51,11 @@
 					{translate key="issue.no"} {$issue->getData('number')},
 					({$issue->getData('year')})
 				</span>
-				<span>
-					{$issue->getData('title')|join}
-				</span>
+				{if $issue->getData('title')}
+					<span>
+						{$issue->getData('title')|join}
+					</span>
+				{/if}
 				</span>
 				<!--
 				{if $showDatePublished && $article->getDatePublished()}
