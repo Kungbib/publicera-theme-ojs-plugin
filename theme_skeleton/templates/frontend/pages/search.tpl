@@ -93,7 +93,6 @@
 			{else}
 				{translate key="plugins.themes.publicera_theme.search.searchResults.foundSingle"}
 			{/if}
-			<br>
 			"{$query|escape}"
 		</div>
 	{/if}
