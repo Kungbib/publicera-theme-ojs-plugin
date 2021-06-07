@@ -31,7 +31,7 @@
 	<div class="pkp_structure_footer container py-4">
 		<div class="row d-flex justify-content-center">
 			<div class="logo col col-4 col-md-2 text-center">
-				<img src="{$imageAssetPath}/kb_logo_text_white.svg" />
+				<img src="{$imageAssetPath}/kb_logo_text_white.svg" alt="{translate key="plugins.themes.publicera_theme.site.logotypeAlt"}" />
 			</div>
 			<div class="logo col col-12 col-md-1"></div>
 			{if $pageFooter}
