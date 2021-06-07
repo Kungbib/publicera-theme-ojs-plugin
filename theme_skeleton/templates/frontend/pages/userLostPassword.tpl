@@ -35,13 +35,6 @@
 				<button class="submit btn btn-primary btn-round" type="submit">
 					{translate key="user.login.resetPassword"}
 				</button>
-
-				{if !$disableUserReg}
-					{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
-					<a href="{$registerUrl}" class="register btn btn-link">
-						{translate key="user.login.registerNewAccount"}
-					</a>
-				{/if}
 			</div>
 		</div>
 
