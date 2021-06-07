@@ -30,7 +30,7 @@
 		<nav class="pkp_site_nav_menu navbar navbar-expand-lg" aria-label="{translate|escape key="common.navigation.site"}">
 			<div class="container">
 				<a class="navbar-brand" href=".">
-					<img aria-hidden="true" src="{$imageAssetPath}/kb_logo_black.svg" />
+					<img aria-hidden="true" alt="{translate key="plugins.themes.publicera_theme.site.logotypeAlt"}" src="{$imageAssetPath}/kb_logo_black.svg" />
 					<!-- DISABLING BUILT IN LOGO-CHOOSER <img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> -->
 					{$displayPageHeaderTitle|escape}
 				</a>

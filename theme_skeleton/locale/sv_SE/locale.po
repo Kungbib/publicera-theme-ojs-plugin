@@ -49,3 +49,9 @@ msgstr "publicerad i"
 
 msgid "plugins.themes.publicera_theme.site.by"
 msgstr "av"
+
+msgid "plugins.themes.publicera_theme.site.logotypeAlt"
+msgstr "Kungliga bibliotekets logotyp"
+
+msgid "plugins.themes.publicera_theme.search.searchResults.coverImagePlaceholderAlt"
+msgstr "Ingen omslagsbild"

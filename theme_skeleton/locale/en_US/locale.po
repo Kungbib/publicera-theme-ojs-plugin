@@ -49,3 +49,9 @@ msgstr "published in"
 
 msgid "plugins.themes.publicera_theme.site.by"
 msgstr "by"
+
+msgid "plugins.themes.publicera_theme.site.logotypeAlt"
+msgstr "Logotype of the National Library of Sweden"
+
+msgid "plugins.themes.publicera_theme.search.searchResults.coverImagePlaceholderAlt"
+msgstr "No cover image"

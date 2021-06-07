@@ -38,7 +38,7 @@
 		</div>
 	{else}
 		<div class="cover articleSummary-cover is-placeholder" aria-hidden="true">
-				<img src="{$imageAssetPath}/journal_default_cover.png" />
+				<img src="{$imageAssetPath}/journal_default_cover.png" alt="{translate key="plugins.themes.publicera_theme.search.searchResults.coverImagePlaceholderAlt"}" />
 		</div>
 	{/if}
 		<div class="articleSummary-details" aria-hidden="true">
