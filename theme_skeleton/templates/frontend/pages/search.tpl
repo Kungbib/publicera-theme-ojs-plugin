@@ -118,9 +118,13 @@
 
 	{* Results pagination *}
 	{else}
-		<div class="cmp_pagination text-center">
-			{page_info iterator=$results}
-			{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear}
+		<div class="cmp_pagination pagination">
+			<div>
+				{page_info iterator=$results}
+			</div>
+			<div>
+				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear}
+			</div>
 		</div>
 	{/if}
 

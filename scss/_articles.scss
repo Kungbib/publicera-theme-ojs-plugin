@@ -60,3 +60,24 @@
     font-size: 0.88rem;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  a {
+    border: 1px solid $dark;
+    padding: 0.2em 0.4em;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  strong {
+    border: 1px solid $publicera-purple-color;
+    background-color: $publicera-purple-color;
+    color: $light;
+    padding: 0.2em 0.4em;
+    font-weight: 400;
+  }
+}
