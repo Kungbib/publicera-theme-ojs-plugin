@@ -100,7 +100,7 @@
 						{if $about}
 						<div class="row justify-content-center">
 							<p class="text-center">
-								<a data-bs-target="#collapseAbout" class="text-white" data-bs-toggle="collapse" role="button">
+								<a data-bs-target="#collapseAbout" href="#" class="text-white" data-bs-toggle="collapse" role="button">
 									{translate key="plugins.themes.publicera_theme.jumbotron_about_link"}
 									<i class="kbico-circle-arrow-down rotate" id="collapseAboutIcon"></i>
 								</a>
