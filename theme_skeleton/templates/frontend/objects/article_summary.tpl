@@ -56,7 +56,6 @@
 						{$issue->getData('title')|join}
 					</span>
 				{/if}
-				</span>
 				<!--
 				{if $showDatePublished && $article->getDatePublished()}
 					<span class="published">
