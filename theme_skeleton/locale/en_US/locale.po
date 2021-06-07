@@ -21,7 +21,7 @@ msgid "plugins.themes.publicera_theme.jumbotron_header"
 msgstr "Welcome to Publicera!"
 
 msgid "plugins.themes.publicera_theme.jumbotron_lead"
-msgstr "A national digital platform for openly available swedish scientific journals."
+msgstr "A platform for swedish scholarly open access journals."
 
 msgid "plugins.themes.publicera_theme.jumbotron_about_link"
 msgstr "Read more about Publicera"

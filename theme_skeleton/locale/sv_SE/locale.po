@@ -21,7 +21,7 @@ msgid "plugins.themes.publicera_theme.jumbotron_header"
 msgstr "Välkommen till Publicera!"
 
 msgid "plugins.themes.publicera_theme.jumbotron_lead"
-msgstr "En nationell digital plattform för öppet tillgängliga svenska vetenskapliga tidskrifter."
+msgstr "En plattform för öppet tillgängliga svenska vetenskapliga tidskrifter."
 
 msgid "plugins.themes.publicera_theme.jumbotron_about_link"
 msgstr "Läs mer om Publicera"
