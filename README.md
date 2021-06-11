@@ -24,8 +24,8 @@ It's adviced to keep this repository out of your OJS development environment whi
 * [npm](https://www.npmjs.com/get-npm) (should already be included with node)
 * [Sass](https://sass-lang.com/install) (`npm install -g sass`)
 * Font package
-  * Located in `O:\Avd-Informationssystem\Enh. Systemutveckling, design\Frontend\Arkiv\publicera-ojs-plugin--fonts.tar`
-  * Due to licensing this is archived internally. Unpack it in the root folder of this repo.
+  * Due to licensing this is archived internally. Check internal documentation or ask a developer.
+  * Unpack it in the root folder of this repo.
 
 ### Build
 
