@@ -34,29 +34,27 @@
 					<!-- DISABLING BUILT IN LOGO-CHOOSER <img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> -->
 					{$displayPageHeaderTitle|escape}
 				</a>
+
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars" aria-hidden="true"></i>
 				</button>
+
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						{if isset($supportedLocales) && $supportedLocales|@count}
-								{foreach from=$supportedLocales item=localeName key=localeKey}
-									{if $localeKey != $currentLocale}
-										<li class="nav-item">
-											<a class="nav-link" href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey}">
-												{$localeName}
-											</a>
-										</li>
-									{/if}
-								{/foreach}
+							{foreach from=$supportedLocales item=localeName key=localeKey}
+								{if $localeKey != $currentLocale && ($localeKey == 'en_US' || $localeKey == 'sv_SE')}
+									<li class="nav-item">
+										<a class="nav-link" href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey}">
+											{$localeName}
+										</a>
+									</li>
+								{/if}
+							{/foreach}
 						{/if}
-						<!-- <li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
-						</li> -->
+
 						{$primaryMenu}
+
 						{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}
 					</ul>
 				</div>
