@@ -33,10 +33,32 @@
 			<div class="logo col col-4 col-md-2 text-center">
 				<img src="{$imageAssetPath}/kb_logo_text_white.svg" alt="{translate key="plugins.themes.publicera_theme.site.logotypeAlt"}" />
 			</div>
+
 			<div class="logo col col-12 col-md-1"></div>
+
 			{if $pageFooter}
-				<div class="pkp_footer_content col col-12 col-md-9">
-					{$pageFooter}
+				<div class="col col-12 col-md-9">
+					<div class="row d-flex mt-5 mt-md-0 mb-5">
+						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
+							<img src="https://assets.crossref.org/logo/crossref-logo-200.svg" class="px-5 py-2 py-md-0 px-md-3 align-self-center w-100" alt="Crossref logo" />
+						</div>
+
+						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
+							<img src="{$imageAssetPath}doaj_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						</div>
+
+						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
+							<img src="{$imageAssetPath}oaspa_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						</div>
+
+						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
+							<img src="{$imageAssetPath}pkp_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						</div>
+					</div>
+
+					<div class="pkp_footer_content">
+						{$pageFooter}
+					</div>
 				</div>
 			{/if}
 
