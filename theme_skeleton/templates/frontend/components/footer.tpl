@@ -40,7 +40,7 @@
 				<div class="col col-12 col-md-9">
 					<div class="row d-flex mt-5 mt-md-0 mb-5">
 						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
-							<img src="https://assets.crossref.org/logo/crossref-logo-200.svg" class="px-5 py-2 py-md-0 px-md-3 align-self-center w-100" alt="Crossref logo" />
+							<img src="{$imageAssetPath}/crossref_logo.svg" class="px-5 py-2 py-md-0 px-md-3 align-self-center w-100" alt="Crossref logo" />
 						</div>
 
 						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
