@@ -55,3 +55,6 @@ msgstr "Logotype of the National Library of Sweden"
 
 msgid "plugins.themes.publicera_theme.search.searchResults.coverImagePlaceholderAlt"
 msgstr "No cover image"
+
+msgid "plugins.themes.publicera_theme.support_header_item"
+msgstr "Publicera Support"

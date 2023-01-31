@@ -31,7 +31,7 @@
 			<div class="container">
 				<a class="navbar-brand" href=".">
 					<img aria-hidden="true" alt="{translate key="plugins.themes.publicera_theme.site.logotypeAlt"}" src="{$imageAssetPath}/kb_logo_black.svg" />
-					<!-- DISABLING BUILT IN LOGO-CHOOSER <img {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> -->
+					<!-- DISABLING BUILT IN LOGO-CHOOSER <img {if $displayPageHeaderLogo.altText != ''} alt="{$displayPageHeaderLogo.altText|escape}"{/if} src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"> -->
 					{$displayPageHeaderTitle|escape}
 				</a>
 
@@ -53,6 +53,12 @@
 							{/foreach}
 						{/if}
 
+						<li class="nav-item">
+							<a class="nav-link" href="https://publicera.kb.se/ps/index">
+								{translate key="plugins.themes.publicera_theme.support_header_item"}
+							</a>
+						</li>
+
 						{$primaryMenu}
 
 						{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}
@@ -61,6 +67,7 @@
 
 			</div>
 		</nav>
+
 		<header class="pkp_structure_head publicera-header text-white" id="headerNavigationContainer" role="banner">
 			<div>
 				<div class="pkp_head_wrapper container">
