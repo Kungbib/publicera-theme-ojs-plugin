@@ -20,7 +20,7 @@ class PubliceraThemePlugin extends ThemePlugin {
 
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/theme.css');
-		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
+		HookRegistry::register('TemplateManager::display', array($this, 'loadTemplateData'));
 		// Load Vendor JS
 		$this->addScript('bootstrap', 'js/bootstrap.min.js');
 		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
@@ -29,6 +29,15 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$this->addScript('about-collapse', 'js/about-collapse.js');
 		// Image assets
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
+
+		function smarty_filter($tpl_output, Smarty_Internal_Template $template) {
+			echo "<pre>";
+			print_r($tpl_output);
+			echo "</pre>";
+			return $tpl_output;
+		}
+
+		$smarty->registerFilter('test', 'smarty_filter');
 	}
 
 	/**
