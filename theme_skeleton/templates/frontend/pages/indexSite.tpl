@@ -56,7 +56,7 @@
 
 									<ul class="journal-links links">
 										<li class="view">
-											<i class="journal-icon kbico-book-circle"></i>
+											<i class="bi bi-book"></i>
 											<a href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
 												{translate key="plugins.themes.publicera_theme.site.journalCurrent"}
 											</a>
