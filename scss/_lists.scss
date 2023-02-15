@@ -1,5 +1,6 @@
 .breadcrumb-item {
   &:before {
+    display: inline-block;
     content: '';
   }
 }
