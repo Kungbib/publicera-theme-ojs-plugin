@@ -1,5 +1,8 @@
 <?php
 
+// Includes
+include 'PubliceraThemeModifiers.inc.php';
+
 /**
  * @class DefaultChildThemePlugin
  * @ingroup plugins_themes_default
@@ -20,24 +23,19 @@ class PubliceraThemePlugin extends ThemePlugin {
 
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/theme.css');
-		HookRegistry::register('TemplateManager::display', array($this, 'loadTemplateData'));
 		// Load Vendor JS
 		$this->addScript('bootstrap', 'js/bootstrap.min.js');
 		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
+
 		// Load own JS
 		$this->addScript('journal-list', 'js/journal-list.js');
 		$this->addScript('about-collapse', 'js/about-collapse.js');
+
 		// Image assets
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 
-		function smarty_filter($tpl_output, Smarty_Internal_Template $template) {
-			echo "<pre>";
-			print_r($tpl_output);
-			echo "</pre>";
-			return $tpl_output;
-		}
-
-		$smarty->registerFilter('test', 'smarty_filter');
+		// Load modifiers
+		$this->loadModifiers();
 	}
 
 	/**
@@ -49,6 +47,7 @@ class PubliceraThemePlugin extends ThemePlugin {
 	}
 
 	function sitewideData($hookName, $args) {
+		$this->smarty = $args[0];
 		$smarty = $args[0];
 
 		$imagesAssetPath = $this->getRequest()->getBaseUrl() . DIRECTORY_SEPARATOR . $this->getTemplatePath() . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
@@ -64,21 +63,19 @@ class PubliceraThemePlugin extends ThemePlugin {
 	}
 
 	/**
-	 * Fired when the `TemplateManager::display` hook is called.
-	 *
-	 * @param string $hookname
-	 * @param array $args [$templateMgr, $template, $sendContentType, $charset, $output]
+	 * Load theme smarty modifiers
 	 */
-	public function loadTemplateData($hookName, $args) {
-
+	public function loadModifiers() {
 		// Retrieve the TemplateManager
-		$templateMgr = $args[0];
+		$smarty = TemplateManager::getManager($this->getRequest());
 
-		// Attach a custom piece of data to the TemplateManager
-		$myCustomData = 'This is my custom data. It could be any PHP variable.';
-		$templateMgr->assign('myCustomData', $myCustomData);
+		// Create new instance of modifiers class
+		$modifiers = new PubliceraThemeModifiers($smarty);
 
-		return false;
+		// Register modifiers in smarty
+		$modifiers->register('sort_journals_desc', array($modifiers, 'sort_journals_desc'));
+		$modifiers->register('sort_journals_asc', array($modifiers, 'sort_journals_asc'));
+		$modifiers->register('filter_ps_journal', array($modifiers, 'filter_ps_journal'));
 	}
 
 }
