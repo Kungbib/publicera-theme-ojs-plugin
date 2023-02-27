@@ -39,20 +39,28 @@
 			{if $pageFooter}
 				<div class="col col-12 col-md-9">
 					<div class="row d-flex mt-5 mt-md-0 mb-5">
-						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
-							<img src="{$imageAssetPath}/crossref_logo.svg" class="px-5 py-2 py-md-0 px-md-3 align-self-center w-100" alt="Crossref logo" />
+						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
+							<a href="https://www.crossref.org/" target="_blank">
+								<img src="{$imageAssetPath}/crossref_logo.svg" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 70px" alt="Crossref logo" />
+							</a>
 						</div>
 
-						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
-							<img src="{$imageAssetPath}doaj_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
+							<a href="https://doaj.org/" target="_blank">
+								<img src="{$imageAssetPath}doaj_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 45px" />
+							</a>
 						</div>
 
-						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
-							<img src="{$imageAssetPath}oaspa_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
+							<a href="https://oaspa.org/" target="_blank">
+								<img src="{$imageAssetPath}oaspa_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 50px" />
+							</a>
 						</div>
 
-						<div class="d-flex align-content-center col col-6 col-md-3 text-center">
-							<img src="{$imageAssetPath}pkp_logo.png" class="px-5 py-3 py-md-0 px-md-3 align-self-center w-100" />
+						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
+							<a href="https://pkp.sfu.ca/" target="_blank">
+								<img src="{$imageAssetPath}pkp_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 50px" />
+							</a>
 						</div>
 					</div>
 
