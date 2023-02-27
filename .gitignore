@@ -3,3 +3,4 @@ node_modules/
 tmp/
 fonts/
 theme_skeleton/vendor/
+.DS_Store
