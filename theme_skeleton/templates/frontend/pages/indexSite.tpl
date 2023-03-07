@@ -22,7 +22,7 @@
 			<ul class="journals-list fadeable faded" id="journals-list">
 				<li class="journal-sizer col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4"></li>
 
-				{foreach from=$journals|filter_ps_journal|sort_journals_desc item=journal}
+				{foreach from=$journals|filter_ps_journal item=journal}
 					{capture assign="url"}{url journal=$journal->getPath()}{/capture}
 					{assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
 					{assign var="description" value=$journal->getLocalizedDescription()}
