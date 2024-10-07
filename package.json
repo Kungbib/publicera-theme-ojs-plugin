@@ -42,5 +42,8 @@
     "kungbib-styles": "^2.0.0",
     "masonry-layout": "^4.2.2",
     "run-script-os": "^1.1.6"
+  },
+  "devDependencies": {
+    "sass": "^1.79.4"
   }
 }
