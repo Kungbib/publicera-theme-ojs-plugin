@@ -32,7 +32,6 @@
 
 .issue {
   display: flex;
-  background-color: #fff;
   flex-direction: column;
   position: relative;
 
@@ -41,9 +40,8 @@
   }
 
   h3 {
-    font-size: 1.375rem;
-    line-height: 1.1;
-    margin-bottom: 0.5em;
+    font-size: 1.1rem;
+    margin-bottom: 0;
   }
 
   &-container {
@@ -52,8 +50,10 @@
 
   &-thumb-container {
     overflow: hidden;
+    border: 3px solid black;
 
     &.is-placeholder {
+      background-color: black;
       display: flex;
       color: $light;
       text-transform: uppercase;
@@ -64,6 +64,12 @@
       justify-content: center;
       min-height: 5em;
     }
+
+    .journal-thumb {
+      position: static;
+      height: auto;
+      width: 100%;
+    }
   }
 
   &-thumb {
@@ -72,12 +78,21 @@
   }
 
   &-body {
-    padding: 1.25em 1.25em 0 1.25em;
+    padding-top: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   &-title {
     a {
       text-decoration: none;
     }
+  }
+
+  &-meta {
+    display: flex;
+    gap: .25rem;
+    color: #7e7e7e;
   }
 }

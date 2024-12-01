@@ -26,7 +26,6 @@ class PubliceraThemePlugin extends ThemePlugin {
 
 		// Load Vendor JS
 		$this->addScript('bootstrap', 'js/bootstrap.min.js');
-		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
 		$this->addScript('isotope', 'js/isotope.min.js');
 
 		// Load own JS
@@ -81,6 +80,8 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$modifiers->register('filter_ps_journal', array($modifiers, 'filter_ps_journal'));
 		$modifiers->register('limitItems', array($modifiers, 'limitItems'));
 		$modifiers->register('itemsWithIssue', array($modifiers, 'itemsWithIssue'));
+		$modifiers->register('lowercase', array($modifiers, 'lowercase'));
+		$modifiers->register('uppercase', array($modifiers, 'uppercase'));
 	}
 
 	/**
@@ -117,6 +118,9 @@ class PubliceraThemePlugin extends ThemePlugin {
 					'latestIssueId' => $latestIssue->getId(),
 					'latestIssueUrl' => "/" . $journal->getPath() . "/issue/view/" . $latestIssue->getId(),
 					'coverImageUrl' => $latestIssue->getLocalizedCoverImageUrl(),
+					'latestIssueVolume' => $latestIssue->getVolume(),
+					'latestIssueNumber' => $latestIssue->getNumber(),
+					'latestIssueYear' => $latestIssue->getYear(),
 				];
 			} else {
 				error_log("No published issues for journal ID $journalId.");
@@ -128,6 +132,9 @@ class PubliceraThemePlugin extends ThemePlugin {
 					'latestIssueDate' => null,
 					'latestIssueId' => null,
 					'coverImageUrl' => null,
+					'latestIssueVolume' => null,
+					'latestIssueNumber' => null,
+					'latestIssueYear' => null,
 				];
 			}
 		}

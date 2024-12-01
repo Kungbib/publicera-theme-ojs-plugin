@@ -66,6 +66,22 @@ class PubliceraThemeModifiers {
 
 		return $this;
 	}
+
+	/**
+	 * lowercase
+	 * Converts string to lowercase
+	 */
+	public static function lowercase($string) {
+		return mb_strtolower($string);
+	}
+
+	/**
+	 * uppercase
+	 * Converts string to uppercase
+	 */
+	public static function uppercase($string) {
+		return mb_strtoupper($string);
+	}
 }
 
 ?>

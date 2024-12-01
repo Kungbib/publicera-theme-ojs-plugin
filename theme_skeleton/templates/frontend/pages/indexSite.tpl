@@ -20,24 +20,56 @@
 			<li class="issue-sizer"></li>
 
 			{foreach from=$sortedJournals|itemsWithIssue|limitItems:5 item=journalData}
+				{assign var="thumb" value=$journalData.journalThumbnail}
 				{assign var="url" value=$journalData.latestIssueUrl}
 				{assign var="coverImage" value=$journalData.coverImageUrl}
 				{assign var="name" value=$journalData.journal->getLocalizedName()}
 				{assign var="latestIssueDate" value=$journalData.latestIssueDate}
 				{assign var="latestIssueId" value=$journalData.latestIssueId}
+				{assign var="id" value=$journalData.journal->getId()}
 
 				<li class="issue-container" data-date="{$latestIssueDate}">
 					<div class="issue">
-						<a href="{$url}" tabindex="0" alt="{$name}">
+						<a href="{$url}" alt="{$name}">
 							{if $coverImage}
 								<div class="issue-thumb-container thumb ratio" style="--bs-aspect-ratio: 125%;">
 									<img class="issue-thumb" src="{$coverImage}">
+								</div>
+							{elseif $thumb}
+								<div class="issue-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 125%;">
+									<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
 								</div>
 							{else}
 								<div class="issue-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 125%;">
 								</div>
 							{/if}
 						</a>
+
+						<div class="issue-body">
+							<h3 class="journal-title">
+								<a href="{$url|escape}" rel="bookmark">
+									{$name}
+								</a>
+							</h3>
+
+							<div class="issue-meta">
+								{if $journalData.latestIssueVolume}
+									<span>
+										VOL {$journalData.latestIssueVolume}
+									</span>
+								{/if}
+								{if $journalData.latestIssueNumber}
+									<span>
+										NO {$journalData.latestIssueNumber}
+									</span>
+								{/if}
+								{if $journalData.latestIssueYear}
+									<span>
+										({$journalData.latestIssueYear})
+									</span>
+								{/if}
+							</div>
+						</div>
 					</div>
 				</li>
 			{/foreach}
@@ -70,10 +102,10 @@
 					<li
 						class="journal-container {if $thumb}has_thumb{/if} col-12 col-sm-6 col-md-4 col-lg-3"
 						data-id="{$id}"
-						data-title="{$name}"
+						data-title="{$name|lowercase}"
 					>
 						<div class="journal">
-							<a href="{$url|escape}" tabindex="-1">
+							<a href="{$url|escape}">
 								{if $thumb}
 									<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">
 										<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
