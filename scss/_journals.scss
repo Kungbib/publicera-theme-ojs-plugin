@@ -1,5 +1,6 @@
 .journals {
   overflow: hidden;
+  margin-bottom: 2.75rem;
 }
 
 .journals-list {
@@ -9,6 +10,8 @@
 }
 
 .journal-container {
+  height: 310px;
+
   .journal-thumb-container {
     background-color: #d6d6d6;
   }
@@ -18,6 +21,7 @@
   display: flex;
   background-color: #fff;
   flex-direction: column;
+  height: 100%;
 
   &:focus-within {
     outline: 2px solid black;
@@ -26,7 +30,7 @@
   h3 {
     font-size: 1.375rem;
     line-height: 1.1;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
   }
 
   &-container {
@@ -40,7 +44,6 @@
       color: $light;
       text-transform: uppercase;
       font-family: $font-family-base;
-      font-size: 2rem;
       font-weight: 800;
       align-items: center;
       justify-content: center;
@@ -55,6 +58,10 @@
 
   &-body {
     padding: 1.25em 1.25em 0 1.25em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &-title {
@@ -89,12 +96,11 @@
   }
 
   &-links {
-    border: solid $light;
-    border-width: 2px 0px 0px 0px;
     display: flex;
     list-style: none;
     padding: 0.5em 0 0.85em 0;
     gap: 1em;
+
     a {
       font-size: 85%;
       text-decoration: none;

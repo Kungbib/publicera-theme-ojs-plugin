@@ -58,3 +58,9 @@ msgstr "No cover image"
 
 msgid "plugins.themes.publicera_theme.support_header_item"
 msgstr "Publicera Support"
+
+msgid "plugins.themes.publicera_theme.headers.latest"
+msgstr "Senaste utgivet"
+
+msgid "plugins.themes.publicera_theme.headers.alljournals"
+msgstr "Alla tidskrifter"
