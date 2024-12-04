@@ -103,9 +103,10 @@
 						class="journal-container {if $thumb}has_thumb{/if} col-12 col-sm-6 col-md-4 col-lg-3"
 						data-id="{$id}"
 						data-title="{$name|lowercase}"
+						tabIndex="-1"
 					>
 						<div class="journal">
-							<a href="{$url|escape}">
+							<a href="{$url|escape}" tabIndex="0">
 								{if $thumb}
 									<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">
 										<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
