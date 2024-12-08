@@ -1,0 +1,25 @@
+.site-banner {
+	background-color: #bb1a1a;
+	color: white;
+	padding: 0.75rem 0;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.18);
+	font-size: 88%;
+	font-weight: 600;
+
+	i {
+		border-radius: 999px;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: white;
+		color: #ac2d17;
+	}
+
+	>.container {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+}

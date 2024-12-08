@@ -2,6 +2,7 @@
 
 // Includes
 include 'PubliceraThemeModifiers.inc.php';
+include 'PubliceraSiteBanner.php';
 
 /**
  * @class DefaultChildThemePlugin
@@ -32,7 +33,6 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$this->addScript('journal-list', 'js/journal-list.js');
 		$this->addScript('about-collapse', 'js/about-collapse.js');
 
-		// Image assets
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 
 		// Load modifiers
@@ -47,6 +47,14 @@ class PubliceraThemePlugin extends ThemePlugin {
 		return __('plugins.themes.publicera_theme.name');
 	}
 
+	/**
+	 * Get the description of this plugin
+	 * @return string
+	 */
+	public function getDescription() {
+		return __('plugins.themes.publicera_theme.description');
+	}
+
 	public function sitewideData($hookName, $args) {
 		$this->smarty = $args[0];
 		$smarty = $args[0];
@@ -56,14 +64,14 @@ class PubliceraThemePlugin extends ThemePlugin {
 
 		// Assign sorted journals to the template
 		$smarty->assign('sortedJournals', $this->getJournalsByLatestIssue());
+
+		$this->loadSiteBanner($smarty);
 	}
 
-	/**
-	 * Get the description of this plugin
-	 * @return string
-	 */
-	public function getDescription() {
-		return __('plugins.themes.publicera_theme.description');
+	public function loadSiteBanner($smarty) {
+		$siteBanner = new SiteBanner();
+		$smarty->assign('sitebanner_should_display', $siteBanner->shouldDisplayBanner());
+		$smarty->assign('sitebanner_content', $siteBanner->getBannerContent());
 	}
 
 	/**
