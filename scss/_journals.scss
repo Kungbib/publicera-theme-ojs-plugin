@@ -10,6 +10,7 @@
 }
 
 .journal-container {
+  display: flex;
   .journal-thumb-container {
     background-color: #d6d6d6;
   }
@@ -19,7 +20,7 @@
   display: flex;
   background-color: #fff;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
 
   &:focus-within {
     outline: 2px solid black;
@@ -29,6 +30,19 @@
     font-size: 1.375rem;
     line-height: 1.1;
     margin-bottom: 0;
+    display: flex;
+    white-space: normal;
+    overflow: hidden;
+
+    > a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      height: 72px;
+    }
   }
 
   &-container {
