@@ -102,12 +102,16 @@
 
 footer {
   color: $light;
+
   a {
     color: $light;
+    height: fit-content;
+
     &:hover {
       color: $light;
     }
   }
+
   .pkp_footer_content {
     display: grid;
     grid-template-columns: 1fr;
