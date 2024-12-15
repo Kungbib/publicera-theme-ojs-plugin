@@ -1,5 +1,5 @@
 .site-banner {
-	background-color: #bb1a1a;
+	background-color: $kb-signal-red;
 	color: white;
 	padding: 0.75rem 0;
 	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.18);
@@ -14,7 +14,11 @@
 		align-items: center;
 		justify-content: center;
 		background-color: white;
-		color: #ac2d17;
+		color: $kb-signal-red;
+	}
+
+	a {
+		color: white;
 	}
 
 	>.container {
