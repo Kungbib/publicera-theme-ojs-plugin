@@ -98,11 +98,13 @@
 					{assign var="url" value=$journalData.journalUrl}
 					{assign var="id" value=$journalData.journal->getId()}
 					{assign var="name" value=$journalData.journal->getLocalizedName()}
+					{assign var="latestIssueDate" value=$journalData.latestIssueDate}
 
 					<li
 						class="journal-container {if $thumb}has_thumb{/if} col-12 col-sm-6 col-md-4 col-lg-3"
 						data-id="{$id}"
 						data-title="{$name|lowercase}"
+						data-date="{$latestIssueDate}"
 						tabIndex="-1"
 					>
 						<div class="journal">
