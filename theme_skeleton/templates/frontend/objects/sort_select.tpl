@@ -6,15 +6,19 @@
 <div class="input-select">
 	<select id="{$id}">
 		<option value="titleAsc">
-			A-Ö
+			{translate key="plugins.themes.publicera_theme.sorting.alphabetic_asc"}
 		</option>
 
 		<option value="titleDesc">
-			Ö-A
+			{translate key="plugins.themes.publicera_theme.sorting.alphabetic_desc"}
 		</option>
 
 		<option value="id">
-			Nyaste tidsskrift
+			{translate key="plugins.themes.publicera_theme.sorting.newest"}
+		</option>
+
+		<option value="dateDesc">
+			{translate key="plugins.themes.publicera_theme.sorting.date"}
 		</option>
 	</select>
 </div>
