@@ -1,32 +1,12 @@
 .issues-list {
   list-style: none;
   padding: 0;
-  margin: 0 -15px;
+  margin: 0 (-$grid-gap);
 }
 
 .issue-container {
   .issue-thumb-container {
     background-color: #d6d6d6;
-  }
-}
-
-.issue-sizer, .issue-container {
-  width: 50%;
-
-  @media (min-width: 668px) {
-    width: 33.33%;
-  }
-
-  @media (min-width: 892px) {
-    width: 25%;
-  }
-
-  @media (min-width: 1380px) {
-    width: 20%;
-  }
-
-  @media (min-width: 1920px) {
-    width: 16.6666%;
   }
 }
 
@@ -45,7 +25,7 @@
   }
 
   &-container {
-    padding: 15px 15px 15px 15px;
+    padding: $grid-gap;
   }
 
   &-thumb-container {
@@ -78,10 +58,10 @@
   }
 
   &-body {
-    padding-top: 0.25rem;
+    padding-top: 0.4rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.2rem;
   }
 
   &-title {
@@ -91,6 +71,7 @@
   }
 
   &-meta {
+    font-size: 0.85rem;
     display: flex;
     gap: .25rem;
     color: #7e7e7e;

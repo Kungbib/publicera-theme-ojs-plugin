@@ -17,7 +17,7 @@
 		</h2>
 
 		<ul class="issues-list fadeable faded" id="issues-list">
-			<li class="issue-sizer"></li>
+			<li class="issue-sizer col-12 col-xxs-6 col-md-4 col-lg-3 col-xl-2"></li>
 
 			{foreach from=$sortedJournals|itemsWithIssue|limitItems:5 item=journalData}
 				{assign var="thumb" value=$journalData.journalThumbnail}
@@ -28,7 +28,7 @@
 				{assign var="latestIssueId" value=$journalData.latestIssueId}
 				{assign var="id" value=$journalData.journal->getId()}
 
-				<li class="issue-container" data-date="{$latestIssueDate}">
+				<li class="issue-container col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2" data-date="{$latestIssueDate}">
 					<div class="issue">
 						<a href="{$url}" alt="{$name}">
 							{if $coverImage}
@@ -91,7 +91,7 @@
 			{translate key="site.noJournals"}
 		{else}
 			<ul class="journals-list fadeable faded" id="journals-list">
-				<li class="journal-sizer col-12 col-sm-6 col-md-4 col-lg-3"></li>
+				<li class="journal-sizer col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2"></li>
 
 				{foreach from=$sortedJournals|filter_ps_journal item=journalData}
 					{assign var="thumb" value=$journalData.journalThumbnail}
@@ -101,7 +101,7 @@
 					{assign var="latestIssueDate" value=$journalData.latestIssueDate}
 
 					<li
-						class="journal-container {if $thumb}has_thumb{/if} col-12 col-sm-6 col-md-4 col-lg-3"
+						class="journal-container {if $thumb}has_thumb{/if} col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2"
 						data-id="{$id}"
 						data-title="{$name|lowercase}"
 						data-date="{$latestIssueDate}"

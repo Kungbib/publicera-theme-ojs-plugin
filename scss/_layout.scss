@@ -121,6 +121,13 @@ footer {
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  .partner-container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
 }
 
 .section-title {
@@ -155,9 +162,9 @@ footer {
     position: absolute;
     top: 50%;
     right: 5px;
-    transform: translateY(-0.75rem) rotate(-45deg);
-    width: 1rem;
-    height: 1rem;
+    transform: translateY(-0.55rem) rotate(-45deg);
+    width: .75rem;
+    height: .75rem;
     border: 0px solid #b7b6b6;
     border-left-width: 1px;
     border-bottom-width: 1px;;

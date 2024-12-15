@@ -6,7 +6,7 @@
 .journals-list {
   list-style: none;
   padding: 0;
-  margin: 0 -15px;
+  margin: 0 (-$grid-gap);
 }
 
 .journal-container {
@@ -46,7 +46,7 @@
   }
 
   &-container {
-    padding: 15px 15px 15px 15px;
+    padding: $grid-gap;
   }
 
   &-thumb-container {
