@@ -60,7 +60,19 @@ msgid "plugins.themes.publicera_theme.support_header_item"
 msgstr "Publicera Support"
 
 msgid "plugins.themes.publicera_theme.headers.latest"
-msgstr "Senaste utgivet"
+msgstr "Recent issues"
 
 msgid "plugins.themes.publicera_theme.headers.alljournals"
-msgstr "Alla tidskrifter"
+msgstr "All journals"
+
+msgid "plugins.themes.publicera_theme.sorting.alphabetic_asc"
+msgstr "A-Z"
+
+msgid "plugins.themes.publicera_theme.sorting.alphabetic_desc"
+msgstr "Z-A"
+
+msgid "plugins.themes.publicera_theme.sorting.newest"
+msgstr "New to Publicera"
+
+msgid "plugins.themes.publicera_theme.sorting.date"
+msgstr "Recent issues"

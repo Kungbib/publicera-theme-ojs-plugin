@@ -65,3 +65,15 @@ msgstr "Senaste utgivet"
 
 msgid "plugins.themes.publicera_theme.headers.alljournals"
 msgstr "Alla tidskrifter"
+
+msgid "plugins.themes.publicera_theme.sorting.alphabetic_asc"
+msgstr "A-Ö"
+
+msgid "plugins.themes.publicera_theme.sorting.alphabetic_desc"
+msgstr "Ö-A"
+
+msgid "plugins.themes.publicera_theme.sorting.newest"
+msgstr "Nyast på Publicera"
+
+msgid "plugins.themes.publicera_theme.sorting.date"
+msgstr "Senast utgivet"
