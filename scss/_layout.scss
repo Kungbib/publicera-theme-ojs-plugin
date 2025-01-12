@@ -127,6 +127,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+
+    #crossref-badge {
+      mix-blend-mode: hard-light;
+    }
   }
 }
 
