@@ -43,7 +43,7 @@ class PubliceraThemeModifiers {
 		$result = array();
 
 		foreach($journals as $journalData) {
-			if ($journalData['journalUrl'] !== 'ps') {
+			if ($journalData['journalUrl'] != 'ps' && $journalData['journalUrl'] != '/ps') {
 				array_push($result, $journalData);
 			}
 		}
