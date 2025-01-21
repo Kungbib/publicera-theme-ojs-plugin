@@ -19,7 +19,7 @@ class SiteBanner {
 		$filePath = $_SERVER['DOCUMENT_ROOT'] . '/banner.txt';
 		if (file_exists($filePath)) {
 			$contents = file_get_contents($filePath);
-			return trim($contents);
+			return trim(nl2br($contents));
 		} else {
 			return "";
 		}
