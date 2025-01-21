@@ -2,7 +2,7 @@
   list-style: none;
   padding: 0;
   margin: 0 (-$grid-gap);
-  width: calc(100% + #{($grid-gap + 1) * 2});
+  width: calc(100% + #{($grid-gap) * 2});
 }
 
 .issue-container {
