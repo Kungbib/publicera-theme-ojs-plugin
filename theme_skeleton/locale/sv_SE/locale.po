@@ -77,3 +77,6 @@ msgstr "Nyast på Publicera"
 
 msgid "plugins.themes.publicera_theme.sorting.date"
 msgstr "Senast utgivet"
+
+msgid "plugins.themes.publicera_theme.sorting.label"
+msgstr "Välj sorteringsordning"

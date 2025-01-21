@@ -77,3 +77,7 @@ msgstr "New to Publicera"
 
 msgid "plugins.themes.publicera_theme.sorting.date"
 msgstr "Recent issues"
+
+
+msgid "plugins.themes.publicera_theme.sorting.label"
+msgstr "Select sort order"
