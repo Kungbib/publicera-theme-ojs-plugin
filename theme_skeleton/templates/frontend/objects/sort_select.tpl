@@ -4,7 +4,7 @@
 {/if}
 
 <div class="input-select">
-	<select id="{$id}">
+	<select id="{$id}" aria-label="{translate key="plugins.themes.publicera_theme.sorting.label"}">
 		<option value="titleAsc">
 			{translate key="plugins.themes.publicera_theme.sorting.alphabetic_asc"}
 		</option>
