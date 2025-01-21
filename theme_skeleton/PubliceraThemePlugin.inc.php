@@ -106,18 +106,13 @@ class PubliceraThemePlugin extends ThemePlugin {
 		while ($journal = $journals->next()) {
 			$journalId = $journal->getId();
 
-			// Debugging: Log the journal ID
-			error_log("Processing journal ID: $journalId");
-
 			// Fetch published issues for the journal
 			$issueDao = DAORegistry::getDAO('IssueDAO');
-			$issues = $issueDao->getPublishedIssues($journalId);  // Get the latest issue (limit 1)
+			$issues = $issueDao->getPublishedIssues($journalId); // Get the latest issue (limit 1)
 
 			// Check if any issues are returned
 			$latestIssue = $issues->next();
 			if ($latestIssue) {
-				error_log("Latest issue date for journal ID $journalId: " . $latestIssue->getDatePublished());
-
 				$sortedJournals[] = [
 					'journal' => $journal,
 					'journalUrl' => "/" . $journal->getPath(),
@@ -147,7 +142,30 @@ class PubliceraThemePlugin extends ThemePlugin {
 			}
 		}
 
-		return $sortedJournals;
+		return $this->sortByLatestIssueDate($sortedJournals);
+	}
+
+	private function sortByLatestIssueDate(array $items): array {
+		usort($items, function ($a, $b) {
+			$dateA = $a['latestIssueDate'] ?? null;
+			$dateB = $b['latestIssueDate'] ?? null;
+	
+			// Push null values to the end
+			if ($dateA === null && $dateB === null) {
+				return 0;
+			}
+			if ($dateA === null) {
+				return 1;
+			}
+			if ($dateB === null) {
+				return -1;
+			}
+	
+			// Compare valid dates (newest first)
+			return strtotime($dateB) <=> strtotime($dateA);
+		});
+	
+		return $items;
 	}
 }
 
