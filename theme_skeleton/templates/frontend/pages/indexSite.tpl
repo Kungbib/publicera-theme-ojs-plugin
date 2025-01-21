@@ -30,14 +30,15 @@
 
 				<li class="issue-container col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2" data-date="{$latestIssueDate}">
 					<div class="issue">
-						<a href="{$url}" alt="{$name}">
+						<a href="{$url|escape}" alt="{$name}">
 							{if $coverImage}
 								<div class="issue-thumb-container thumb ratio" style="--bs-aspect-ratio: 125%;">
 									<img class="issue-thumb" src="{$coverImage}">
 								</div>
 							{elseif $thumb}
 								<div class="issue-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 125%;">
-									<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
+									<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"
+										{if $thumb.altText} alt="{$thumb.altText|escape|default:''}" {/if}>
 								</div>
 							{else}
 								<div class="issue-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 125%;">
@@ -100,18 +101,14 @@
 					{assign var="name" value=$journalData.journal->getLocalizedName()}
 					{assign var="latestIssueDate" value=$journalData.latestIssueDate}
 
-					<li
-						class="journal-container {if $thumb}has_thumb{/if} col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2"
-						data-id="{$id}"
-						data-title="{$name|lowercase}"
-						data-date="{$latestIssueDate}"
-						tabIndex="-1"
-					>
+					<li class="journal-container {if $thumb}has_thumb{/if} col-12 col-xxs-6 col-md-4 col-lg-3 col-2xl-2"
+						data-id="{$id}" data-title="{$name|lowercase}" data-date="{$latestIssueDate}" tabIndex="-1">
 						<div class="journal">
 							<a href="{$url|escape}" tabIndex="0">
 								{if $thumb}
 									<div class="journal-thumb-container thumb ratio" style="--bs-aspect-ratio: 50%;">
-										<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape|default:''}"{/if}>
+										<img class="journal-thumb" src="{$journalFilesPath}{$id}/{$thumb.uploadName|escape:"url"}"
+											{if $thumb.altText} alt="{$thumb.altText|escape|default:''}" {/if}>
 									</div>
 								{else}
 									<div class="journal-thumb-container thumb is-placeholder ratio" style="--bs-aspect-ratio: 50%;">
@@ -129,7 +126,7 @@
 								<ul class="journal-links links">
 									<li class="view">
 										<i class="bi bi-book"></i>
-										<a href="{url|escape journal=$url page="issue" op="current"}">
+										<a href="{$url|escape}/issue/current">
 											{translate key="plugins.themes.publicera_theme.site.journalCurrent"}
 										</a>
 									</li>
