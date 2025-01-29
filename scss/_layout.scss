@@ -6,7 +6,9 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-
+.cmp_form {
+  margin: 0;
+}
 
 // Make main content fill up so footer is pushed town
 .pkp_structure_page {
@@ -102,17 +104,73 @@
 
 footer {
   color: $light;
+
   a {
     color: $light;
+    height: fit-content;
+
     &:hover {
       color: $light;
     }
   }
+
   .pkp_footer_content {
     display: grid;
     grid-template-columns: 1fr;
     @include media-breakpoint-up(md) {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .partner-container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+
+    #crossref-badge {
+      mix-blend-mode: hard-light;
+    }
+  }
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .section-actions {
+    select {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.input-select {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+
+  select {
+    font-family: Sentinel, sans-serif;
+    font-weight: 600;
+    appearance: none;
+    border: 0;
+    background: none;
+    padding-right: 2rem;
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-0.55rem) rotate(-45deg);
+    width: .75rem;
+    height: .75rem;
+    border: 0px solid #b7b6b6;
+    border-left-width: 1px;
+    border-bottom-width: 1px;;
   }
 }

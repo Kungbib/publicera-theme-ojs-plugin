@@ -16,14 +16,16 @@ $breadcrumb-active-color:           inherit !default;
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
+  xxs: 416px,
   sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-//   xxl: 1400px
+  md: 826px,
+  lg: 1126px,
+  xl: 1326px,
+  2xl: 1551px
 );
 // scss-docs-end grid-breakpoints
 
+$grid-gap: 10px;
 
 // Grid containers
 //
@@ -31,12 +33,10 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
+  sm: 95%,
+  md: 95%,
+  lg: 95%,
+  xl: 95%,
 //   xxl: 1320px
 );
 // scss-docs-end container-max-widths
-
-

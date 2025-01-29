@@ -1,0 +1,80 @@
+.issues-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 (-$grid-gap);
+  width: calc(100% + #{($grid-gap) * 2});
+}
+
+.issue-container {
+  .issue-thumb-container {
+    background-color: #d6d6d6;
+  }
+}
+
+.issue {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:focus-within {
+    outline: 2px solid black;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  &-container {
+    padding: $grid-gap;
+  }
+
+  &-thumb-container {
+    overflow: hidden;
+    border: 3px solid black;
+
+    &.is-placeholder {
+      background-color: black;
+      display: flex;
+      color: $light;
+      text-transform: uppercase;
+      font-family: $font-family-base;
+      font-size: 2rem;
+      font-weight: 800;
+      align-items: center;
+      justify-content: center;
+      min-height: 5em;
+    }
+
+    .journal-thumb {
+      position: static;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &-thumb {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-body {
+    padding-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  &-title {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &-meta {
+    font-size: 0.85rem;
+    display: flex;
+    gap: .25rem;
+    color: #636363;
+  }
+}

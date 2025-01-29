@@ -2,6 +2,7 @@
 
 // Includes
 include 'PubliceraThemeModifiers.inc.php';
+include 'PubliceraSiteBanner.php';
 
 /**
  * @class DefaultChildThemePlugin
@@ -23,15 +24,15 @@ class PubliceraThemePlugin extends ThemePlugin {
 
 		// Load primary stylesheet
 		$this->addStyle('stylesheet', 'styles/theme.css');
+
 		// Load Vendor JS
 		$this->addScript('bootstrap', 'js/bootstrap.min.js');
-		$this->addScript('masonry', 'js/masonry.pkgd.min.js');
+		$this->addScript('isotope', 'js/isotope.min.js');
 
 		// Load own JS
 		$this->addScript('journal-list', 'js/journal-list.js');
 		$this->addScript('about-collapse', 'js/about-collapse.js');
 
-		// Image assets
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 
 		// Load modifiers
@@ -42,24 +43,35 @@ class PubliceraThemePlugin extends ThemePlugin {
 	 * Get the display name of this plugin
 	 * @return string
 	 */
-	function getDisplayName() {
+	public function getDisplayName() {
 		return __('plugins.themes.publicera_theme.name');
-	}
-
-	function sitewideData($hookName, $args) {
-		$this->smarty = $args[0];
-		$smarty = $args[0];
-
-		$imagesAssetPath = $this->getRequest()->getBaseUrl() . DIRECTORY_SEPARATOR . $this->getTemplatePath() . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
-		$smarty->assign('imageAssetPath', $imagesAssetPath);
 	}
 
 	/**
 	 * Get the description of this plugin
 	 * @return string
 	 */
-	function getDescription() {
+	public function getDescription() {
 		return __('plugins.themes.publicera_theme.description');
+	}
+
+	public function sitewideData($hookName, $args) {
+		$this->smarty = $args[0];
+		$smarty = $args[0];
+
+		$imagesAssetPath = $this->getRequest()->getBaseUrl() . DIRECTORY_SEPARATOR . $this->getTemplatePath() . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
+		$smarty->assign('imageAssetPath', $imagesAssetPath);
+
+		// Assign sorted journals to the template
+		$smarty->assign('sortedJournals', $this->getJournalsByLatestIssue());
+
+		$this->loadSiteBanner($smarty);
+	}
+
+	public function loadSiteBanner($smarty) {
+		$siteBanner = new SiteBanner();
+		$smarty->assign('sitebanner_should_display', $siteBanner->shouldDisplayBanner());
+		$smarty->assign('sitebanner_content', $siteBanner->getBannerContent());
 	}
 
 	/**
@@ -73,11 +85,88 @@ class PubliceraThemePlugin extends ThemePlugin {
 		$modifiers = new PubliceraThemeModifiers($smarty);
 
 		// Register modifiers in smarty
-		$modifiers->register('sort_journals_desc', array($modifiers, 'sort_journals_desc'));
-		$modifiers->register('sort_journals_asc', array($modifiers, 'sort_journals_asc'));
 		$modifiers->register('filter_ps_journal', array($modifiers, 'filter_ps_journal'));
+		$modifiers->register('limitItems', array($modifiers, 'limitItems'));
+		$modifiers->register('itemsWithIssue', array($modifiers, 'itemsWithIssue'));
+		$modifiers->register('lowercase', array($modifiers, 'lowercase'));
+		$modifiers->register('uppercase', array($modifiers, 'uppercase'));
 	}
 
+	/**
+	 * Get journals sorted by latest published issue
+	 */
+	public function getJournalsByLatestIssue() {
+		// Load the Journal DAO to fetch journals
+		$journalDao = DAORegistry::getDAO('JournalDAO');
+		$journals = $journalDao->getAll(true);  // Pass 'true' to only get enabled journals
+		$sortedJournals = [];
+		$currentLocale = AppLocale::getLocale();
+
+		// Iterate over each journal
+		while ($journal = $journals->next()) {
+			$journalId = $journal->getId();
+
+			// Fetch published issues for the journal
+			$issueDao = DAORegistry::getDAO('IssueDAO');
+			$issues = $issueDao->getPublishedIssues($journalId); // Get the latest issue (limit 1)
+
+			// Check if any issues are returned
+			$latestIssue = $issues->next();
+			if ($latestIssue) {
+				$sortedJournals[] = [
+					'journal' => $journal,
+					'journalUrl' => "/" . $journal->getPath(),
+					'journalThumbnail' => $journal->getLocalizedData('journalThumbnail'),
+					'latestIssueDate' => $latestIssue->getDatePublished(),
+					'latestIssueId' => $latestIssue->getId(),
+					'latestIssueUrl' => "/" . $journal->getPath() . "/issue/view/" . $latestIssue->getId(),
+					'coverImageUrl' => $latestIssue->getLocalizedCoverImageUrl(),
+					'latestIssueVolume' => $latestIssue->getVolume(),
+					'latestIssueNumber' => $latestIssue->getNumber(),
+					'latestIssueYear' => $latestIssue->getYear(),
+				];
+			} else {
+				error_log("No published issues for journal ID $journalId.");
+
+				$sortedJournals[] = [
+					'journal' => $journal,
+					'journalUrl' => $journal->getPath(),
+					'journalThumbnail' => $journal->getLocalizedData('journalThumbnail'),
+					'latestIssueDate' => null,
+					'latestIssueId' => null,
+					'coverImageUrl' => null,
+					'latestIssueVolume' => null,
+					'latestIssueNumber' => null,
+					'latestIssueYear' => null,
+				];
+			}
+		}
+
+		return $this->sortByLatestIssueDate($sortedJournals);
+	}
+
+	private function sortByLatestIssueDate(array $items): array {
+		usort($items, function ($a, $b) {
+			$dateA = $a['latestIssueDate'] ?? null;
+			$dateB = $b['latestIssueDate'] ?? null;
+	
+			// Push null values to the end
+			if ($dateA === null && $dateB === null) {
+				return 0;
+			}
+			if ($dateA === null) {
+				return 1;
+			}
+			if ($dateB === null) {
+				return -1;
+			}
+	
+			// Compare valid dates (newest first)
+			return strtotime($dateB) <=> strtotime($dateA);
+		});
+	
+		return $items;
+	}
 }
 
 ?>

@@ -38,28 +38,28 @@
 
 			{if $pageFooter}
 				<div class="col col-12 col-md-9">
-					<div class="row d-flex mt-5 mt-md-0 mb-5">
+					<div class="row d-flex mt-5 mt-md-0 mb-5 partner-container">
 						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
 							<a href="https://www.crossref.org/" target="_blank">
-								<img src="{$imageAssetPath}/crossref_logo.svg" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 70px" alt="Crossref logo" />
+								<img id="crossref-badge" src="https://assets.crossref.org/logo/member-badges/member-badge-sponsoring-organization.svg" width="135" height="135" alt="Crossref Sponsor Badge">
 							</a>
 						</div>
 
 						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
 							<a href="https://doaj.org/" target="_blank">
-								<img src="{$imageAssetPath}doaj_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 45px" />
+								<img src="{$imageAssetPath}doaj_logo.png" class="px-2 py-4 align-self-center" style="width: 100%; max-width: 180px;" />
 							</a>
 						</div>
 
 						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
 							<a href="https://oaspa.org/" target="_blank">
-								<img src="{$imageAssetPath}oaspa_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 50px" />
+								<img src="{$imageAssetPath}oaspa_logo.png" class="px-2 py-4 align-self-center" style="width: 100%; max-width: 180px;" />
 							</a>
 						</div>
 
 						<div class="d-flex justify-content-center align-items-center col col-6 col-lg-3 text-center mb-2 mb-lg-0">
 							<a href="https://pkp.sfu.ca/" target="_blank">
-								<img src="{$imageAssetPath}pkp_logo.png" class="px-5 py-2 py-lg-2 px-lg-3 align-self-center" style="height: 50px" />
+								<img src="{$imageAssetPath}pkp_logo.png" class="px-2 py-4 align-self-center" style="width: 100%; max-width: 180px;" />
 							</a>
 						</div>
 					</div>

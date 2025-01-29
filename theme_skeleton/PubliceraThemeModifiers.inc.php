@@ -7,27 +7,32 @@ class PubliceraThemeModifiers {
 	}
 
 	/**
-	 * sort_journals_desc
-	 * Sorts journals array by getLocalizedName desc (a->z)
+	 * Limit the number of items in an array.
+	 *
+	 * @param array $array The array to limit.
+	 * @param int $limit The maximum number of items.
+	 * @return array The limited array.
 	 */
-	public function sort_journals_desc($journals) {
-		usort($journals, function($a, $b) {
-			return strcmp($a->getLocalizedName(), $b->getLocalizedName());
-		});
-
-		return $journals;
+	public static function limitItems($array, $limit) {
+		return array_slice($array, 0, $limit);
 	}
 
 	/**
-	 * sort_journals_asc
-	 * Sorts journals array by getLocalizedName asc (z->a)
+	 * Filter items that do not have the properties latestIssue or coverImage set.
+	 *
+	 * @param array $array The array to filter.
+	 * @return array The filtered array.
 	 */
-	public function sort_journals_asc($journals) {
-		usort($journals, function($a, $b) {
-			return strcmp($b->getLocalizedName(), $a->getLocalizedName());
-		});
+	public static function itemsWithIssue($journals) {
+		$result = array();
 
-		return $journals;
+		foreach($journals as $journalData) {
+			if (isset($journalData['latestIssueId']) && !empty($journalData['latestIssueId'])) {
+				array_push($result, $journalData);
+			}
+		}
+
+		return $result;
 	}
 
 	/**
@@ -37,9 +42,9 @@ class PubliceraThemeModifiers {
 	public function filter_ps_journal($journals) {
 		$result = array();
 
-		foreach($journals as $journal) {
-			if ($journal->getPath() !== 'ps') {
-				array_push($result, $journal);
+		foreach($journals as $journalData) {
+			if ($journalData['journalUrl'] != 'ps' && $journalData['journalUrl'] != '/ps') {
+				array_push($result, $journalData);
 			}
 		}
 
@@ -62,6 +67,21 @@ class PubliceraThemeModifiers {
 		return $this;
 	}
 
+	/**
+	 * lowercase
+	 * Converts string to lowercase
+	 */
+	public static function lowercase($string) {
+		return mb_strtolower($string);
+	}
+
+	/**
+	 * uppercase
+	 * Converts string to uppercase
+	 */
+	public static function uppercase($string) {
+		return mb_strtoupper($string);
+	}
 }
 
 ?>
