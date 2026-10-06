@@ -15,14 +15,12 @@
     "copy_bootstrap_js": "run-script-os",
     "copy_bootstrap_js:default": "mkdir -p ./theme_skeleton/js && cp -r ./node_modules/bootstrap/dist/js/bootstrap.min.js ./build/publicera_theme/js/bootstrap.min.js",
     "copy_bootstrap_js:win32": "npm run ensure_js_dir && cp -r .\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js .\\build\\publicera_theme\\js\\bootstrap.min.js",
-    "copy_fonts:win32": "cp -r .\\fonts\\ .\\build/publicera_theme\\fonts\\",
-    "copy_fonts:default": "cp -r ./fonts ./build/publicera_theme/fonts/",
     "copy_source:win32": "npm run clear_build && mkdir .\\build && cp -r .\\theme_skeleton\\ .\\build/publicera_theme\\",
     "copy_source:default": "npm run clear_build && mkdir ./build && cp -r ./theme_skeleton ./build/publicera_theme/",
     "sass:build": "sass ./scss/theme.scss:./build/publicera_theme/styles/theme.css",
     "sass:watch": "sass --watch --poll scss/theme.scss:build/publicera_theme/styles/theme.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts && npm run copy_js"
+    "build": "npm run copy_source && npm run sass:build && npm run copy_js"
   },
   "repository": {
     "type": "git",
