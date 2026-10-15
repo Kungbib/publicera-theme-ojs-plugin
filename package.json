@@ -26,7 +26,7 @@
     "type": "git",
     "url": "git+https://github.com/Kungbib/publicera-theme-ojs-plugin.git"
   },
-  "author": "Ola Blissing <ola.blissing@gmail.com>",
+  "author": "Kungliga Biblioteket <DL-Team-Utv-GRON@kb.se>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Kungbib/publicera-theme-ojs-plugin/issues"
