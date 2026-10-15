@@ -23,10 +23,15 @@
 }
 
 .navbar-brand {
-  font-size: 1rem;
   img {
     margin-right: 0.5em;
   }
+}
+
+.pkp_site_name_wrapper > h1 {
+  font-family: "KB Display", serif;
+  font-weight: 400;
+  font-size: 5rem;
 }
 
 .breadcrumb {
@@ -152,8 +157,8 @@ footer {
   cursor: pointer;
 
   select {
-    font-family: 'KB Sans', sans-serif;
-    font-weight: 600;
+    font-family: 'KB Serif', serif;
+    font-weight: 500;
     appearance: none;
     border: 0;
     background: none;
