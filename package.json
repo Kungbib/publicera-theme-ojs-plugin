@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Kungbib/publicera-theme-ojs-plugin#readme",
   "dependencies": {
-    "@kungbib/bootstrap-styles": "^3.0.0-rc.1",
+    "@kungbib/bootstrap-styles": "^3.0.0-rc.3",
     "run-script-os": "^1.1.6"
   },
   "devDependencies": {
