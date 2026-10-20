@@ -15,28 +15,25 @@
     "copy_bootstrap_js": "run-script-os",
     "copy_bootstrap_js:default": "mkdir -p ./theme_skeleton/js && cp -r ./node_modules/bootstrap/dist/js/bootstrap.min.js ./build/publicera_theme/js/bootstrap.min.js",
     "copy_bootstrap_js:win32": "npm run ensure_js_dir && cp -r .\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js .\\build\\publicera_theme\\js\\bootstrap.min.js",
-    "download_fonts": "curl https://www.kb.se/webdav/files/System/resources/fonts/sentinel-web/sentinel_web.zip --create-dirs --output tmp/fonts.zip",
-    "copy_fonts:win32": "cp -r .\\fonts\\ .\\build/publicera_theme\\fonts\\",
-    "copy_fonts:default": "cp -r ./fonts ./build/publicera_theme/fonts/",
     "copy_source:win32": "npm run clear_build && mkdir .\\build && cp -r .\\theme_skeleton\\ .\\build/publicera_theme\\",
     "copy_source:default": "npm run clear_build && mkdir ./build && cp -r ./theme_skeleton ./build/publicera_theme/",
     "sass:build": "sass ./scss/theme.scss:./build/publicera_theme/styles/theme.css",
     "sass:watch": "sass --watch --poll scss/theme.scss:build/publicera_theme/styles/theme.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy_source && npm run sass:build && npm run copy_fonts && npm run copy_js"
+    "build": "npm run copy_source && npm run sass:build && npm run copy_js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kungbib/publicera-theme-ojs-plugin.git"
   },
-  "author": "Ola Blissing <ola.blissing@gmail.com>",
+  "author": "Kungliga Biblioteket <DL-Team-Utv-GRON@kb.se>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Kungbib/publicera-theme-ojs-plugin/issues"
   },
   "homepage": "https://github.com/Kungbib/publicera-theme-ojs-plugin#readme",
   "dependencies": {
-    "kungbib-styles": "^2.0.0",
+    "@kungbib/bootstrap-styles": "^3.0.0-rc.3",
     "run-script-os": "^1.1.6"
   },
   "devDependencies": {
