@@ -11,6 +11,7 @@ include 'PubliceraSiteBanner.php';
  * @brief Default theme
  */
 import('lib.pkp.classes.plugins.ThemePlugin');
+import('lib.pkp.classes.site.VersionCheck');
 
 class PubliceraThemePlugin extends ThemePlugin {
 	/**
@@ -22,21 +23,32 @@ class PubliceraThemePlugin extends ThemePlugin {
 	public function init() {
 		$this->setParent('defaultthemeplugin');
 
+		$version = '?v=' . $this->getThemeVersion();
+
 		// Load primary stylesheet
-		$this->addStyle('stylesheet', 'styles/theme.css');
+		$this->addStyle('stylesheet', 'styles/theme.css' . $version);
 
 		// Load Vendor JS
-		$this->addScript('bootstrap', 'js/bootstrap.min.js');
-		$this->addScript('isotope', 'js/isotope.min.js');
+		$this->addScript('bootstrap', 'js/bootstrap.min.js' . $version);
+		$this->addScript('isotope', 'js/isotope.min.js' . $version);
 
 		// Load own JS
-		$this->addScript('journal-list', 'js/journal-list.js');
-		$this->addScript('about-collapse', 'js/about-collapse.js');
+		$this->addScript('journal-list', 'js/journal-list.js' . $version);
+		$this->addScript('about-collapse', 'js/about-collapse.js' . $version);
 
 		HookRegistry::register('TemplateManager::display', array($this, 'sitewideData'));
 
 		// Load modifiers
 		$this->loadModifiers();
+	}
+
+	private function getThemeVersion() {
+		try {
+			$version = VersionCheck::getValidPluginVersionInfo($this->_getBaseDir('version.xml'));
+			return $version->getVersionString();
+		} catch (Exception $e) {
+			return gmdate('YmdHis');
+		}
 	}
 
 	/**
